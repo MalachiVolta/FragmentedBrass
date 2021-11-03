@@ -1,3 +1,2 @@
 # FragmentedBrass
-
-Game for school yes?
+School project

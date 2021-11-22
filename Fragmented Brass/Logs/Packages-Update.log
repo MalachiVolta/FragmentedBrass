@@ -45,3 +45,13 @@ The following packages were added:
   com.unity.timeline@1.5.6
   com.unity.ugui@1.0.0
   com.unity.visualscripting@1.6.1
+
+=== Wed Nov 17 14:55:39 2021
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.cinemachine from version 2.7.8 to 2.7.9
+  com.unity.collab-proxy from version 1.9.0 to 1.13.5
+  com.unity.timeline from version 1.5.6 to 1.5.7

@@ -32,10 +32,10 @@ public class Weapon : MonoBehaviour
       if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, ~Ignored))
       {
         Debug.Log(hit.transform.name);
-        Targetable target = hit.transform.GetComponent<Targetable>();
-        if(target != null)
+        Enemy enemy = hit.transform.GetComponent<Enemy>();
+        if(enemy != null)
         {
-          target.Hit(damage);
+          enemy.Hit(damage);
         }
       }
     }

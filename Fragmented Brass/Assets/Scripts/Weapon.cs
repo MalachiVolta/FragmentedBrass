@@ -1,12 +1,17 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using UnityEngine;
 using UnityEngine.VFX;
 
-public class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour,IWeapon
 {
   public LayerMask Ignored;
   public int damage = 10;
   public float range = 100f;
   public float fireRate = 7f;
+  public int magSize = 30;
+  public int chamberedSize = 31;
+
+  public int currentAmmo = 31;
 
   public VisualEffect muzzleFlash;
 
@@ -16,15 +21,20 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        if(Input.GetButton("Fire1") && Time.time >= nextTimeToFire && currentAmmo>0)
         {
           nextTimeToFire = Time.time + 1f/fireRate;
           Shoot();
         }
+
+        if(Input.GetButtonDown("Reload") && currentAmmo < chamberedSize)
+        {
+          Reload();
+        }
         
     }
 
-    void Shoot()
+    public void Shoot()
     {
       muzzleFlash.Play();
 
@@ -37,6 +47,19 @@ public class Weapon : MonoBehaviour
         {
           enemy.Hit(damage);
         }
+      }
+      currentAmmo--;
+    }
+
+    public void Reload()
+    {
+      if(currentAmmo==0)
+      {
+        currentAmmo=magSize;
+      }
+      else
+      {
+        currentAmmo=chamberedSize;
       }
     }
 }

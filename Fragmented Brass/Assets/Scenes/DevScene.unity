@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 7a8675eb396637d43b4ba0a69cc715a5, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.029480526, g: 0.038945522, b: 0.04759149, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -519,7 +519,10 @@ MonoBehaviour:
     m_Bits: 8
   damage: 10
   range: 100
-  fireRate: 7
+  fireRate: 1
+  magSize: 30
+  chamberedSize: 31
+  currentAmmo: 31
   muzzleFlash: {fileID: 1821001030}
   fpsCam: {fileID: 2006005894}
 --- !u!1 &735429852
@@ -534,7 +537,6 @@ GameObject:
   - component: {fileID: 735429853}
   - component: {fileID: 735429855}
   - component: {fileID: 735429856}
-  - component: {fileID: 735429857}
   m_Layer: 3
   m_Name: First Person Player
   m_TagString: Untagged
@@ -611,18 +613,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1293087678}
---- !u!114 &735429857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735429852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &752219965
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,6 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95569341f210a940b581a58c7e33f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heatMapBoolVisual: {fileID: 0}
 --- !u!4 &1244632628
 Transform:
   m_ObjectHideFlags: 0
@@ -1118,7 +1109,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 543450653716712037}
+  - {fileID: 2052640883}
   m_Father: {fileID: 2006005895}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1766,6 +1757,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c98ed2a9e369804caadcc40f21dd666, type: 3}
+--- !u!1 &2052640882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2052640883}
+  - component: {fileID: 2052640884}
+  m_Layer: 0
+  m_Name: WeaponHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2052640883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052640882}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 543450653716712037}
+  m_Father: {fileID: 1394276809}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2052640884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052640882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f2d06f6e898a154195b545ff6ae8a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smooth: 8
+  swayMultiplier: 2
 --- !u!1 &43359208439724093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,7 +1932,7 @@ Transform:
   m_GameObject: {fileID: 919132149172228319}
   m_LocalRotation: {x: 0.007393725, y: 0.70250577, z: 0.71149564, w: -0.01431991}
   m_LocalPosition: {x: 0.38000107, y: -0.25, z: 0.7329991}
-  m_LocalScale: {x: 41.413227, y: 41.41326, z: 41.41323}
+  m_LocalScale: {x: 41.41323, y: 41.41326, z: 41.413235}
   m_Children:
   - {fileID: 3652011956298877500}
   - {fileID: 7885885439547242476}
@@ -1914,7 +1951,7 @@ Transform:
   - {fileID: 3966110370741436074}
   - {fileID: 2238042363344275312}
   - {fileID: 752219966}
-  m_Father: {fileID: 1394276809}
+  m_Father: {fileID: 2052640883}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -89.081, y: -1836.732, z: -141.508}
 --- !u!4 &614279023348107832

@@ -21,9 +21,9 @@ public class Weapon : MonoBehaviour,IWeapon
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButton("Fire1") && Time.time >= nextTimeToFire && currentAmmo>0)
+        if(Input.GetButton("Fire1") && Time.time - nextTimeToFire > 1 / fireRate && currentAmmo>0)
         {
-          nextTimeToFire = Time.time + 1f/fireRate;
+          nextTimeToFire = Time.time;
           Shoot();
         }
 

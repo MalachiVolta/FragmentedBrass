@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHandler : MonoBehaviour,IHealthSys
 {
-    int maxHealth;
+    int maxHealth = 100;
     int currentHealth;
     bool isAlive = true;
 
@@ -12,7 +12,8 @@ public class PlayerHandler : MonoBehaviour,IHealthSys
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Health: "+currentHealth);
+        currentHealth=maxHealth;
+        Debug.Log("Health: "+currentHealth); 
         healthBar.SetMaxValue(maxHealth);
     }
 

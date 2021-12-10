@@ -4,7 +4,7 @@ using UnityEngine;
 using CodeMonkey.Utils;
 
 public class Testing : MonoBehaviour{
-    [SerializeField] private HeatMapVisual heatMapVisual;
+    //[SerializeField] private HeatMapVisual heatMapVisual;
     [SerializeField] private HeatMapBoolVisual heatMapBoolVisual;
     private Grid<bool> grid;
     private void Start() {

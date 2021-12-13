@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Collections.Specialized;
+using System.Threading;
 using System.ComponentModel.DataAnnotations.Schema;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -10,6 +13,7 @@ public class Weapon : MonoBehaviour,IWeapon
   public float fireRate = 7f;
   public int magSize = 30;
   public int chamberedSize = 31;
+  public float aimAnimationSpeed = 10f;
 
   public int currentAmmo = 31;
 
@@ -31,6 +35,15 @@ public class Weapon : MonoBehaviour,IWeapon
         {
           Reload();
         }
+
+       /*if(Input.GetButtonDown("Fire2"))
+        {
+          transform.localPosition = Vector3.Slerp(transform.localPosition,ADSPos.localPosition,aimAnimationSpeed * Time.deltaTime);
+        }
+        if(Input.GetButtonUp("Fire2"))
+        {
+           transform.localPosition = Vector3.Slerp(transform.localPosition,DefaultPos.localPosition,aimAnimationSpeed * Time.deltaTime);
+        }*/
         
     }
 

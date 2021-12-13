@@ -6,14 +6,8 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     public ProgressBar progressBar;
-    public void SetMaxValue(int health)
-    {
-        progressBar.maximum=health;
-    }
+    public void SetMaxValue(int health) => progressBar.maximum = health;
 
-    public void SetValue(int health)
-    {
-        progressBar.current=health;
-    }
+    public void SetValue(int health) => progressBar.current = health;
 
 } 

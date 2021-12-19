@@ -4,16 +4,23 @@ using System.Threading;
 using System.ComponentModel.DataAnnotations.Schema;
 using UnityEngine;
 using UnityEngine.VFX;
+using System.Collections;
 
 public class Weapon : MonoBehaviour,IWeapon
 {
+    public WeaponSway sway;
+    public GameObject crosshair;
   public LayerMask Ignored;
   public int damage = 10;
   public float range = 100f;
   public float fireRate = 7f;
   public int magSize = 30;
   public int chamberedSize = 31;
-  public float aimAnimationSpeed = 10f;
+  [SerializeField]private float aimAnimationSpeed = 10f;
+    public Vector3 ADS;
+    public Vector3 hipfire;
+    public Quaternion ADS_rotation;
+    public Quaternion hipfire_rotation;
 
   public int currentAmmo = 31;
 
@@ -22,7 +29,12 @@ public class Weapon : MonoBehaviour,IWeapon
   public Camera fpsCam;
 
   private float nextTimeToFire = 0f;
-    // Update is called once per frame
+
+    private void Awake()
+    {
+    
+    }
+
     void Update()
     {
         if(Input.GetButton("Fire1") && Time.time - nextTimeToFire > 1 / fireRate && currentAmmo>0)
@@ -35,16 +47,21 @@ public class Weapon : MonoBehaviour,IWeapon
         {
           Reload();
         }
-
-       /*if(Input.GetButtonDown("Fire2"))
-        {
-          transform.localPosition = Vector3.Slerp(transform.localPosition,ADSPos.localPosition,aimAnimationSpeed * Time.deltaTime);
-        }
-        if(Input.GetButtonUp("Fire2"))
-        {
-           transform.localPosition = Vector3.Slerp(transform.localPosition,DefaultPos.localPosition,aimAnimationSpeed * Time.deltaTime);
-        }*/
         
+        if(Input.GetMouseButton(1))
+        {
+            transform.localPosition = Vector3.Slerp(transform.localPosition, ADS, aimAnimationSpeed * Time.deltaTime);
+            transform.localRotation = Quaternion.Lerp(transform.localRotation, ADS_rotation, aimAnimationSpeed * Time.deltaTime);
+            sway.isActive = false;
+            crosshair.SetActive(false);
+        }
+        if(!Input.GetMouseButton(1) && transform.localPosition != hipfire)
+        {
+            transform.localPosition = Vector3.Slerp(transform.localPosition, hipfire, aimAnimationSpeed * Time.deltaTime);
+            transform.localRotation = Quaternion.Lerp(transform.localRotation, hipfire_rotation, aimAnimationSpeed * Time.deltaTime);
+            sway.isActive = true;
+            crosshair.SetActive(true);
+        }
     }
 
     public void Shoot()
@@ -61,7 +78,7 @@ public class Weapon : MonoBehaviour,IWeapon
           enemy.Hit(damage);
         }
       }
-      currentAmmo--;
+    currentAmmo--;
     }
 
     public void Reload()
@@ -75,4 +92,6 @@ public class Weapon : MonoBehaviour,IWeapon
         currentAmmo=chamberedSize;
       }
     }
+
+ 
 }

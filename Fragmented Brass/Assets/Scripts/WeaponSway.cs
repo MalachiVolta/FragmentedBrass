@@ -6,10 +6,13 @@ public class WeaponSway : MonoBehaviour
 {
     [SerializeField] private float smooth;
     [SerializeField] private float swayMultiplier;
+    public bool isActive = true;
 
     // Update is called once per frame
     void Update()
     {
+        if (isActive) { 
+
         float mouseX = Input.GetAxisRaw("Mouse X") * swayMultiplier;
         float mouseY = Input.GetAxisRaw("Mouse Y") * swayMultiplier;
 
@@ -19,5 +22,6 @@ public class WeaponSway : MonoBehaviour
         Quaternion targetRotation = rotationX * rotationY;
 
         transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, smooth * Time.deltaTime);
+        }
     }
 }

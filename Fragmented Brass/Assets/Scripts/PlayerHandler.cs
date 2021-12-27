@@ -7,6 +7,7 @@ public class PlayerHandler : MonoBehaviour,IHealthSys
     int maxHealth = 100;
     int currentHealth;
     bool isAlive = true;
+    public bool isBuilding = false;
 
     public HealthBar healthBar;
     // Start is called before the first frame update
@@ -24,6 +25,10 @@ public class PlayerHandler : MonoBehaviour,IHealthSys
            Damage(10);
            Debug.Log("Health: "+currentHealth);
            healthBar.SetValue(currentHealth);
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            isBuilding = !isBuilding;
         }
     }
 

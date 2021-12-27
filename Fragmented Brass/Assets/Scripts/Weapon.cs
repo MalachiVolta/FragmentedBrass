@@ -8,6 +8,7 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour,IWeapon
 {
+    public PlayerHandler player;
     public WeaponSway sway;
     public GameObject crosshair;
   public LayerMask Ignored;
@@ -37,31 +38,33 @@ public class Weapon : MonoBehaviour,IWeapon
 
     void Update()
     {
-        if(Input.GetButton("Fire1") && Time.time - nextTimeToFire > 1 / fireRate && currentAmmo>0)
+        if (player.isBuilding == false) { 
+            if (Input.GetButton("Fire1") && Time.time - nextTimeToFire > 1 / fireRate && currentAmmo > 0)
+            {
+                nextTimeToFire = Time.time;
+                Shoot();
+            }
+
+        if (Input.GetButtonDown("Reload") && currentAmmo < chamberedSize)
         {
-          nextTimeToFire = Time.time;
-          Shoot();
+            Reload();
         }
 
-        if(Input.GetButtonDown("Reload") && currentAmmo < chamberedSize)
-        {
-          Reload();
-        }
-        
-        if(Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1))
         {
             transform.localPosition = Vector3.Slerp(transform.localPosition, ADS, aimAnimationSpeed * Time.deltaTime);
             transform.localRotation = Quaternion.Lerp(transform.localRotation, ADS_rotation, aimAnimationSpeed * Time.deltaTime);
             sway.isActive = false;
             crosshair.SetActive(false);
         }
-        if(!Input.GetMouseButton(1) && transform.localPosition != hipfire)
+        if (!Input.GetMouseButton(1) && transform.localPosition != hipfire)
         {
             transform.localPosition = Vector3.Slerp(transform.localPosition, hipfire, aimAnimationSpeed * Time.deltaTime);
             transform.localRotation = Quaternion.Lerp(transform.localRotation, hipfire_rotation, aimAnimationSpeed * Time.deltaTime);
             sway.isActive = true;
             crosshair.SetActive(true);
         }
+    }
     }
 
     public void Shoot()

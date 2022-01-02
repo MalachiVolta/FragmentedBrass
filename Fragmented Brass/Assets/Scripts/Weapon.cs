@@ -10,30 +10,46 @@ public class Weapon : MonoBehaviour,IWeapon
 {
     public PlayerHandler player;
     public WeaponSway sway;
+    public VisualRecoil VisualRecoil_Script;
     public GameObject crosshair;
-  public LayerMask Ignored;
-  public int damage = 10;
-  public float range = 100f;
-  public float fireRate = 7f;
-  public int magSize = 30;
-  public int chamberedSize = 31;
-  [SerializeField]private float aimAnimationSpeed = 10f;
-    public Vector3 ADS;
-    public Vector3 hipfire;
-    public Quaternion ADS_rotation;
-    public Quaternion hipfire_rotation;
+    private Recoil Recoil_Script;
 
+    public VisualEffect muzzleFlash;
+    public Camera fpsCam;
+
+  [SerializeField] private LayerMask Ignored;
+  [SerializeField] private int damage = 10;
+  [SerializeField] private float range = 100f;
+  [SerializeField] private float fireRate = 7f;
+  [SerializeField] private int magSize = 30;
+  [SerializeField] private int chamberedSize = 31;
+  [SerializeField] private float aimAnimationSpeed = 10f;
+  [SerializeField] private Vector3 ADS;
+  [SerializeField] private Vector3 hipfire;
+  [SerializeField] private Quaternion ADS_rotation;
+  [SerializeField] private Quaternion hipfire_rotation;
+
+    //Hipfire Recoil
+    public float recoilX;
+    public float recoilY;
+    public float recoilZ;
+
+    //ADS Recoil
+    public float aimRecoilX;
+    public float aimRecoilY;
+    public float aimRecoilZ;
+
+    //Settings
+    public float snapping;
+    public float returnSpeed;
+
+    private float nextTimeToFire = 0f;
+  public bool isAiming = false;
   public int currentAmmo = 31;
-
-  public VisualEffect muzzleFlash;
-
-  public Camera fpsCam;
-
-  private float nextTimeToFire = 0f;
 
     private void Awake()
     {
-    
+        Recoil_Script = player.transform.Find("CameraRotation/CameraRecoil").GetComponent<Recoil>();
     }
 
     void Update()
@@ -56,6 +72,7 @@ public class Weapon : MonoBehaviour,IWeapon
             transform.localRotation = Quaternion.Lerp(transform.localRotation, ADS_rotation, aimAnimationSpeed * Time.deltaTime);
             sway.isActive = false;
             crosshair.SetActive(false);
+            isAiming = true;
         }
         if (!Input.GetMouseButton(1) && transform.localPosition != hipfire)
         {
@@ -63,18 +80,20 @@ public class Weapon : MonoBehaviour,IWeapon
             transform.localRotation = Quaternion.Lerp(transform.localRotation, hipfire_rotation, aimAnimationSpeed * Time.deltaTime);
             sway.isActive = true;
             crosshair.SetActive(true);
+            isAiming = false;
+            }
         }
-    }
     }
 
     public void Shoot()
     {
       muzzleFlash.Play();
+        Recoil_Script.RecoilFire();
+        VisualRecoil_Script.Fire();
 
       RaycastHit hit;
       if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, ~Ignored))
       {
-        Debug.Log(hit.transform.name);
         Enemy enemy = hit.transform.GetComponent<Enemy>();
         if(enemy != null)
         {

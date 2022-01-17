@@ -307,7 +307,7 @@ Transform:
   m_GameObject: {fileID: 297862501}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 1, z: 20}
+  m_LocalScale: {x: 24, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -3247,7 +3247,7 @@ MonoBehaviour:
   PlacableObjectsList:
   - {fileID: 11400000, guid: a76845b5bff73d84fa4028d36c9b5cb2, type: 2}
   player: {fileID: 5769807588412849083}
-  gridWidth: 10
+  gridWidth: 12
   gridHeight: 10
   cellSize: 2
 --- !u!4 &6096472457925474093
@@ -3258,7 +3258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6096472457925474099}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -10, y: 0.5, z: -10}
+  m_LocalPosition: {x: -12, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

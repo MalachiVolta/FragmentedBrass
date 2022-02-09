@@ -1,7 +1,6 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using CodeMonkey.Utils;
 
 public class Testing : MonoBehaviour{
     //[SerializeField] private HeatMapVisual heatMapVisual;
@@ -58,4 +57,4 @@ public class HeatMapGridObject{
     public override string ToString(){
         return value.ToString();
     }
-}
+}*/

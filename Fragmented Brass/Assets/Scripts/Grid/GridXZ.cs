@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using CodeMonkey.Utils;
 
 public class GridXZ<TGridObject>
 {
@@ -37,7 +36,7 @@ public class GridXZ<TGridObject>
             }
         }
 
-        bool showDebug = true;
+        bool showDebug = false;
         if (showDebug)
         {
             TextMesh[,] debugTextArray = new TextMesh[width, height];
@@ -73,7 +72,7 @@ public class GridXZ<TGridObject>
 
     public Vector3 GetWorldPosition(int x, int z)
     {
-        return new Vector3(x,0,z) * cellSize + originPosition;
+        return new Vector3(x, 0, z) * cellSize + originPosition;
     }
 
     public void GetXZ(Vector3 worldPosition, out int x, out int z)

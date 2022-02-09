@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -51,4 +51,4 @@ public class HeatMapGenericVisual : MonoBehaviour
         mesh.uv = uv;
         mesh.triangles = triangles;
     }
-}
+}*/

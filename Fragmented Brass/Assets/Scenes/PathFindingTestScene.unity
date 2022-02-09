@@ -3476,13 +3476,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6096472457925474099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0e3c35c2db6d464288cc8729bd7da45, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c0948ebb86f18140881e8da2bdcfb02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PlacableObjectsList:
   - {fileID: 11400000, guid: a76845b5bff73d84fa4028d36c9b5cb2, type: 2}
   player: {fileID: 5769807588412849083}
-  gridWidth: 12
+  gridWidth: 10
   gridHeight: 10
   cellSize: 2
   check: {fileID: 1071171197}

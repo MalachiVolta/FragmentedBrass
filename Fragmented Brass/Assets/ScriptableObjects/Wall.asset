@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wall
   m_EditorClassIdentifier: 
   nameString: Wall
-  prefab: {fileID: 2329487222813622860, guid: a0b659f3c01b9444a877847e0de5228f, type: 3}
-  visual: {fileID: 2329487222813622860, guid: a7a5919f15537264b9b10a03c9b0c5cf, type: 3}
+  prefab: {fileID: 2329487222813622860, guid: a7a5919f15537264b9b10a03c9b0c5cf, type: 3}
+  visual: {fileID: 2329487222813622860, guid: a0b659f3c01b9444a877847e0de5228f, type: 3}
   width: 1
   height: 1

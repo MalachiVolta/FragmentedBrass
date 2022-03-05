@@ -3,7 +3,147 @@ guid: 7d730c3832664604987a180810e15e6a
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete
+    second: {fileID: 2100000, guid: c3a9f24be4205fb4cacb8ec6f276f8c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 8ca1059e6159a0c418ccb64b0655fae9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 9bd882f926d4d6d4cb7826b8b7e11bd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None.001
+    second: {fileID: 2100000, guid: 3e41cbb32879f3b4bbac4f7d3368dfc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None.002
+    second: {fileID: 2100000, guid: c5f74aacd94a1f841b78cfcc843b7b63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None.003
+    second: {fileID: 2100000, guid: b42ac12de0f805343a0ae5ab27d9a791, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None.004
+    second: {fileID: 2100000, guid: a3e057fb1a06af34398c421c357161ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlanks
+    second: {fileID: 2100000, guid: 5c7bd3321d91a6143afb6cbe37a848a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dor
+    second: {fileID: 2100000, guid: f795e327bed02ae46a5fafef79c7c9f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dor.001
+    second: {fileID: 2100000, guid: 88f067eca4903234e94b5a9b50cb58f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: factory_wall
+    second: {fileID: 2100000, guid: b0331d47013f12e49aa2bf81774417c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: factory_wall.001
+    second: {fileID: 2100000, guid: f1e0605cf82248d489addb08571afd73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: factory_wall.002
+    second: {fileID: 2100000, guid: 2f7a88341a57073418752eb998fffdcf, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 1097655
+    second: {fileID: 2800000, guid: 7d05715311c8fef4ea613f0322844179, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Back_Building
+    second: {fileID: 2800000, guid: 6fcb98c762d8e6b4fa33ec4bd2665ff8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Back_Building_Normal
+    second: {fileID: 2800000, guid: 9c001343e99336746b2fca6697125e63, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Dveri
+    second: {fileID: 2800000, guid: 415786ef15142174f9463f2a4c4c57aa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Dveri_Normanl
+    second: {fileID: 2800000, guid: 4fb5458ef72ad3243baf33f8ccbac958, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Dveri_Roughness
+    second: {fileID: 2800000, guid: 665f5b77c7751804080bc4e13414c6bc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main_Building
+    second: {fileID: 2800000, guid: 9aa52250592259c42a01b2452d065c82, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main_Building_Normal
+    second: {fileID: 2800000, guid: 7185b20cdb9bb034db0f6934e848bd56, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Roof
+    second: {fileID: 2800000, guid: d523047faf79eac40ae5f016afea2436, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Shack_NOrmal
+    second: {fileID: 2800000, guid: 0c4ad683c50380a408b5b0673eda6665, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sj+hack
+    second: {fileID: 2800000, guid: 4117b692168561245adbf7864741ac48, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Smoke_Stack
+    second: {fileID: 2800000, guid: d6245ad2345f76a4e81c2741e200c042, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dor _)
+    second: {fileID: 2800000, guid: a7c5f5d15515e374cbae77e7cba3ab26, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: normandor
+    second: {fileID: 2800000, guid: a05961b926ad74743b97e563ae245c2d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ruffnefdor
+    second: {fileID: 2800000, guid: 65213f88eed18fd41b9a16ee01e7d22d, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

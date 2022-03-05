@@ -16,7 +16,7 @@ public class GridBuildingSystem : MonoBehaviour
     private PlacedObjectTypeSO.Dir dir = PlacedObjectTypeSO.Dir.Down;
 
     public PlayerHandler player;
-    [SerializeField]private int gridWidth = 10;
+    [SerializeField] private int gridWidth = 10;
     [SerializeField] private int gridHeight = 10;
     [SerializeField] private float cellSize = 10f;
     private Vector3 OriginPosition;
@@ -28,7 +28,7 @@ public class GridBuildingSystem : MonoBehaviour
         OriginPosition.x = transform.position.x;
         OriginPosition.y = transform.position.y;
         OriginPosition.z = transform.position.z;
-        grid = new GridXZ<GridObject>(gridWidth, gridHeight, cellSize, OriginPosition, (GridXZ<GridObject> g, int x, int z) => new GridObject(g,x,z));
+        grid = new GridXZ<GridObject>(gridWidth, gridHeight, cellSize, OriginPosition, (GridXZ<GridObject> g, int x, int z) => new GridObject(g, x, z));
 
         PlacabaleObjects = PlacableObjectsList[0];
         GhostObjects = PlacableObjectsList[0];
@@ -92,69 +92,73 @@ public class GridBuildingSystem : MonoBehaviour
 
     private void Update()
     {
-
-        if (Input.GetMouseButtonDown(0) && player.isBuilding)
+        try
         {
-        grid.GetXZ(Mouse3D.GetMouseWorldPosition(), out int x, out int z);
-            List<Vector2Int> gridPositionList = PlacabaleObjects.GetGridPositionList(new Vector2Int(x, z), dir);
 
-            bool canBuild = true;
-            foreach (Vector2Int gridPosition in gridPositionList)
+            if (Input.GetMouseButtonDown(0) && player.isBuilding)
             {
-                if (!grid.GetGridObject(gridPosition.x, gridPosition.y).CanBuildWall())
-                {
-                    canBuild = false;
-                    break;
-                }
-            }
-            GridObject gridObject = grid.GetGridObject(x, z);
+                grid.GetXZ(Mouse3D.GetMouseWorldPosition(), out int x, out int z);
+                List<Vector2Int> gridPositionList = PlacabaleObjects.GetGridPositionList(new Vector2Int(x, z), dir);
 
-            bool makesure = check.checkBuildable();
-
-            if (canBuild && makesure)
-            {
-                Vector2Int rotationOffset = PlacabaleObjects.GetRotationOffset(dir);
-                Vector3 placedObjectWorldPosition = grid.GetWorldPosition(x, z) + new Vector3(rotationOffset.x, 0, rotationOffset.y) * grid.GetCellSize();
-                PlacedObject placedObject = PlacedObject.Create(placedObjectWorldPosition, new Vector2Int(x,z), dir, PlacabaleObjects);
+                bool canBuild = true;
                 foreach (Vector2Int gridPosition in gridPositionList)
                 {
-                    grid.GetGridObject(gridPosition.x, gridPosition.y).SetWall(placedObject);
+                    if (!grid.GetGridObject(gridPosition.x, gridPosition.y).CanBuildWall())
+                    {
+                        canBuild = false;
+                        break;
+                    }
                 }
-                gridObject.SetWall(placedObject);
-            }
-            else
-            {
-                Debug.Log("Cantbuildhere");
-            }
+                GridObject gridObject = grid.GetGridObject(x, z);
 
-        }
+                bool makesure = check.checkBuildable();
 
-        if(Input.GetMouseButtonDown(1) && player.isBuilding)
-        {
-            GridObject gridObject = grid.GetGridObject(Mouse3D.GetMouseWorldPosition());
-            PlacedObject placedObject = gridObject.GetWall();
-            if(placedObject != null)
-            {
-                placedObject.DestroySelf();
-
-                List<Vector2Int> gridPositionList = placedObject.GetGridPositionList();
-
-                foreach (Vector2Int gridPosition in gridPositionList)
+                if (canBuild && makesure)
                 {
-                    grid.GetGridObject(gridPosition.x, gridPosition.y).DestroyWall();
+                    Vector2Int rotationOffset = PlacabaleObjects.GetRotationOffset(dir);
+                    Vector3 placedObjectWorldPosition = grid.GetWorldPosition(x, z) + new Vector3(rotationOffset.x, 0, rotationOffset.y) * grid.GetCellSize();
+                    PlacedObject placedObject = PlacedObject.Create(placedObjectWorldPosition, new Vector2Int(x, z), dir, PlacabaleObjects);
+                    foreach (Vector2Int gridPosition in gridPositionList)
+                    {
+                        grid.GetGridObject(gridPosition.x, gridPosition.y).SetWall(placedObject);
+                    }
+                    gridObject.SetWall(placedObject);
+                }
+                else
+                {
+                    Debug.Log("Cantbuildhere");
+                }
+
+            }
+
+            if (Input.GetMouseButtonDown(1) && player.isBuilding)
+            {
+                GridObject gridObject = grid.GetGridObject(Mouse3D.GetMouseWorldPosition());
+                PlacedObject placedObject = gridObject.GetWall();
+                if (placedObject != null)
+                {
+                    placedObject.DestroySelf();
+
+                    List<Vector2Int> gridPositionList = placedObject.GetGridPositionList();
+
+                    foreach (Vector2Int gridPosition in gridPositionList)
+                    {
+                        grid.GetGridObject(gridPosition.x, gridPosition.y).DestroyWall();
+                    }
                 }
             }
-        }
 
-        if (Input.GetKeyDown(KeyCode.R) && player.isBuilding)
+            if (Input.GetKeyDown(KeyCode.R) && player.isBuilding)
+            {
+                dir = PlacedObjectTypeSO.GetNextDir(dir);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha1) && player.isBuilding) { PlacabaleObjects = PlacableObjectsList[0]; }
+            if (Input.GetKeyDown(KeyCode.Alpha2) && player.isBuilding) { PlacabaleObjects = PlacableObjectsList[1]; }
+        }
+        catch (Exception ex)
         {
-            dir = PlacedObjectTypeSO.GetNextDir(dir);
+            Debug.LogException(ex);
         }
-        if(Input.GetKeyDown(KeyCode.Alpha1) && player.isBuilding) { PlacabaleObjects = PlacableObjectsList[0];}
-        if (Input.GetKeyDown(KeyCode.Alpha2) && player.isBuilding) { PlacabaleObjects = PlacableObjectsList[1]; }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && player.isBuilding) { PlacabaleObjects = PlacableObjectsList[2]; }
-        if (Input.GetKeyDown(KeyCode.Alpha4) && player.isBuilding) { PlacabaleObjects = PlacableObjectsList[3]; }
-
     }
     private void RefreshSelectedObjectType()
     {

@@ -8,7 +8,7 @@ public class PlacedObject : MonoBehaviour
     {
         Transform placedObjectTransform = Instantiate(placedObjectTypeSO.prefab, worldPosition, Quaternion.Euler(0, placedObjectTypeSO.GetRotationAngle(dir), 0));
 
-            PlacedObject placedObject = placedObjectTransform.GetComponent<PlacedObject>();
+        PlacedObject placedObject = placedObjectTransform.GetComponent<PlacedObject>();
 
         placedObject.placedObjectTypeSO = placedObjectTypeSO;
         placedObject.origin = origin;

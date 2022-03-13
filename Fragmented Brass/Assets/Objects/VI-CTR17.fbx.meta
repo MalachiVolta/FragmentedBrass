@@ -1,0 +1,683 @@
+fileFormatVersion: 2
+guid: 82484012a652a19479851e086c181a0d
+ModelImporter:
+  serializedVersion: 21100
+  internalIDToNameTable:
+  - first:
+      74: -7788502101523044424
+    second: Armature.001|Default
+  - first:
+      74: 7922421759745531018
+    second: Armature.001|Default.001
+  - first:
+      74: -5958001032671306559
+    second: Armature.001|EquipRadio
+  - first:
+      74: -7735615587360939912
+    second: Armature.001|GunDraw.001
+  - first:
+      74: -1517171085815711088
+    second: Armature.001|GunHolster
+  - first:
+      74: 4726534916472331970
+    second: Armature.001|GunIdle
+  - first:
+      74: -5143877221387772
+    second: Armature.001|GunReloadFull
+  - first:
+      74: -5157115077241859007
+    second: Armature.001|GunShoot
+  - first:
+      74: 3629102600710746340
+    second: Armature.001|GunSprint
+  - first:
+      74: -8090502654576256265
+    second: Armature.001|GunWalk
+  - first:
+      74: 3475350937658977247
+    second: Armature.001|HolsterRadio
+  - first:
+      74: -5585977784459358007
+    second: Armature.001|IdleRadio
+  - first:
+      74: 4455038005851204347
+    second: Armature.001|SprintRadio
+  - first:
+      74: 7674955653352252277
+    second: Armature.001|UseRadio
+  - first:
+      74: -321247988300928088
+    second: Armature.001|WalkRadio
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 295109ae77e97a84882b63d0d1b896c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coat
+    second: {fileID: 2100000, guid: 3a2865d388f3d4e4aae982d2b7e9ebe9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eppaulettes
+    second: {fileID: 2100000, guid: b309249cff8edff43ba1a95e464dbe08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gloves
+    second: {fileID: 2100000, guid: 2bbf05f2336363b46aaa72ecb5b27943, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gun
+    second: {fileID: 2100000, guid: ea8e7510019dccd4b8ccc9c763cc93ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Magazine
+    second: {fileID: 2100000, guid: 7a0320a9c3e886d4a96d1f3c5c3355b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sight
+    second: {fileID: 2100000, guid: 8d3f13bfd0a3b4f4a8f91956d6167d0a, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CoatTextureColors
+    second: {fileID: 2800000, guid: 1a60aa5754d2ced43abecdea8b22b279, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CoatTextureEmission
+    second: {fileID: 2800000, guid: 9c335fa40df308b4a8026ce30b395468, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CoatTextureMetallic
+    second: {fileID: 2800000, guid: a4401268891a0f34d9f0799e65b3cdbd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CoatTextureRoughness
+    second: {fileID: 2800000, guid: 5964af33c8121744bbf205fb29346265, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CoatTextureSpecular
+    second: {fileID: 2800000, guid: 0622764748941f04baeab606ad9e7cde, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: EpaulletesTextureColor
+    second: {fileID: 2800000, guid: 433675e469d409b408159a297851e8dc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GlovesTextureColor
+    second: {fileID: 2800000, guid: 0994e63815f34014d88e3a11ae9fad00, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GunTextureColor
+    second: {fileID: 2800000, guid: 63a60743ba98c924c8064510a805dcd7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GunTextureNormals
+    second: {fileID: 2800000, guid: 0d9f7839f9265dd49a57b733cac343d1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GunTextureRoughness
+    second: {fileID: 2800000, guid: eb0d10a4cb5cb6f498ee15d94394b0c1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MagazineTexture
+    second: {fileID: 2800000, guid: c85eb2835604021458d288cc7050d267, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Malachi
+    second: {fileID: 2800000, guid: 62fb0c47e93ace94c9a076422721c35e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SightTextureColor
+    second: {fileID: 2800000, guid: 9412a6364a20cab4e9854f3b09963c07, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SightTextureGlossy
+    second: {fileID: 2800000, guid: d03e485a0e876d443a56344086e8956b, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'LeftUpperLeg' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: VI-CTR17(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Gunbody
+      parentName: VI-CTR17(Clone)
+      position: {x: 0.095431104, y: 0.5387734, z: 0.33023778}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Magazine
+      parentName: Gunbody
+      position: {x: 0.095431104, y: 0.5387734, z: 0.33023778}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Sight
+      parentName: Gunbody
+      position: {x: 0.095431104, y: 0.5387734, z: 0.33023778}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: SightLens
+      parentName: Gunbody
+      position: {x: 0.095431104, y: 0.5387734, z: 0.33023778}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Armature.001
+      parentName: VI-CTR17(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Chest
+      parentName: Armature.001
+      position: {x: 0.000049063852, y: 0.0006371583, z: 0.004347231}
+      rotation: {x: -0.08928779, y: 0.00065947266, z: 0.0039060903, w: 0.995998}
+      scale: {x: 0.99999994, y: 0.9999998, z: 1.0000001}
+    - name: LeftShoulder
+      parentName: Chest
+      position: {x: -0.00045898152, y: 0.0020224904, z: 0.00009407037}
+      rotation: {x: -0.5271722, y: 0.36031252, z: 0.61633724, w: 0.46086103}
+      scale: {x: 1.0000024, y: 1.0000008, z: 1.0000014}
+    - name: LeftArm
+      parentName: LeftShoulder
+      position: {x: -2.2351741e-10, y: 0.0010385512, z: -6.705522e-10}
+      rotation: {x: 0.13510449, y: -0.0053938325, z: 0.015155641, w: 0.9907008}
+      scale: {x: 0.99999976, y: 1.000002, z: 1.0000002}
+    - name: LeftElbow
+      parentName: LeftArm
+      position: {x: 2.9802322e-10, y: 0.0023310462, z: -1.862645e-10}
+      rotation: {x: 0.034106907, y: 0.0062281583, z: -0.020700641, w: 0.99918437}
+      scale: {x: 1.0000015, y: 1.0000019, z: 1.0000029}
+    - name: LeftWrist
+      parentName: LeftElbow
+      position: {x: 6.426126e-10, y: 0.0027168002, z: 1.862645e-10}
+      rotation: {x: -0.10065113, y: 0.004459368, z: 0.054268505, w: -0.9934306}
+      scale: {x: 0.9999999, y: 0.9999984, z: 0.99999845}
+    - name: MiddleFinger1_L
+      parentName: LeftWrist
+      position: {x: -0.00006063689, y: 0.0008781037, z: -0.000083209445}
+      rotation: {x: -0.10411817, y: -0.06672143, z: 0.00030062298, w: 0.99232435}
+      scale: {x: 1.0000015, y: 1.0000006, z: 1.0000049}
+    - name: MiddleFinger2_L
+      parentName: MiddleFinger1_L
+      position: {x: -3.7252902e-11, y: 0.00021120675, z: -2.9802322e-10}
+      rotation: {x: -0.027562883, y: 0.0010721236, z: 0.024452602, w: 0.99932045}
+      scale: {x: 1.0000042, y: 1.0000032, z: 1.0000015}
+    - name: MiddleFinger3_L
+      parentName: MiddleFinger2_L
+      position: {x: -2.2351741e-10, y: 0.0002763554, z: 2.9802322e-10}
+      rotation: {x: 0.021574171, y: -0.07491339, z: 0.0026940694, w: 0.99695307}
+      scale: {x: 1.0000014, y: 1.0000014, z: 1.0000015}
+    - name: MiddleFinger3_L_end
+      parentName: MiddleFinger3_L
+      position: {x: -0, y: 0.00023289851, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ThumbFinger1_L
+      parentName: LeftWrist
+      position: {x: -0.00033988763, y: 0.0003403301, z: -0.00009791734}
+      rotation: {x: -0.35197073, y: 0.645925, z: -0.21515827, w: 0.6423429}
+      scale: {x: 1.0000052, y: 0.9999985, z: 1.000002}
+    - name: ThumbFinger2_L
+      parentName: ThumbFinger1_L
+      position: {x: 2.0256266e-10, y: 0.00024142509, z: 7.4505804e-11}
+      rotation: {x: 0.0012437698, y: -0.17868969, z: 0.041132648, w: 0.9830445}
+      scale: {x: 1.0000011, y: 1.0000005, z: 1.0000001}
+    - name: ThumbFinger3_L
+      parentName: ThumbFinger2_L
+      position: {x: -1.3038516e-10, y: 0.00018067897, z: -6.519258e-11}
+      rotation: {x: 0.010411142, y: 0.34520653, z: 0.016643263, w: -0.93832135}
+      scale: {x: 1.0000043, y: 1.0000001, z: 0.99999386}
+    - name: ThumbFinger3_L_end
+      parentName: ThumbFinger3_L
+      position: {x: -0, y: 0.00018912637, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: IndexFinger1_L
+      parentName: LeftWrist
+      position: {x: -0.00023356642, y: 0.0008580831, z: -0.00012332489}
+      rotation: {x: -0.065959245, y: -0.12132541, z: 0.007226175, w: 0.9903925}
+      scale: {x: 1.0000017, y: 1.0000011, z: 1.000004}
+    - name: IndexFinger2_L
+      parentName: IndexFinger1_L
+      position: {x: 7.4505804e-11, y: 0.00019836302, z: -2.9802322e-10}
+      rotation: {x: 0.02874653, y: -0.05381164, z: -0.026982466, w: -0.9977725}
+      scale: {x: 1.0000039, y: 1.0000013, z: 1.0000042}
+    - name: IndexFinger3_L
+      parentName: IndexFinger2_L
+      position: {x: -4.4703483e-10, y: 0.00023194648, z: 1.4901161e-10}
+      rotation: {x: 0.037409563, y: -0.0709124, z: -0.016013201, w: 0.99665225}
+      scale: {x: 1.0000012, y: 1.0000006, z: 1}
+    - name: IndexFinger3_L_end
+      parentName: IndexFinger3_L
+      position: {x: -0, y: 0.00015771824, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PinkyFinger1_L
+      parentName: LeftWrist
+      position: {x: 0.000296867, y: 0.0008406667, z: -0.000099223405}
+      rotation: {x: -0.068938084, y: -0.0013782851, z: -0.010247503, w: 0.9975674}
+      scale: {x: 1.0000029, y: 1.0000023, z: 1.0000063}
+    - name: PinkyFinger2_L
+      parentName: PinkyFinger1_L
+      position: {x: -4.4703483e-10, y: 0.00017519138, z: 4.0978193e-10}
+      rotation: {x: 0.00044594693, y: -0.021888526, z: 0.020708544, w: 0.9995459}
+      scale: {x: 1.000003, y: 1.0000027, z: 1.0000032}
+    - name: PinkyFinger3_L
+      parentName: PinkyFinger2_L
+      position: {x: -1.4901161e-10, y: 0.00020358249, z: -3.7252902e-11}
+      rotation: {x: 0.024719821, y: 0.03824505, z: -0.033001073, w: -0.9984174}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000019}
+    - name: PinkyFinger3_L_end
+      parentName: PinkyFinger3_L
+      position: {x: -0, y: 0.00016294498, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RingFinger1_L
+      parentName: LeftWrist
+      position: {x: 0.00014206278, y: 0.00087467977, z: -0.000061337596}
+      rotation: {x: -0.12708955, y: -0.0008324292, z: 0.02501528, w: 0.9915754}
+      scale: {x: 1.0000024, y: 1.0000012, z: 1.0000055}
+    - name: RingFinger2_L
+      parentName: RingFinger1_L
+      position: {x: -1.3038516e-10, y: 0.00025193076, z: -1.11758706e-10}
+      rotation: {x: -0.041333612, y: -0.01992682, z: -0.003108575, w: 0.99894184}
+      scale: {x: 1.0000015, y: 1.000003, z: 1.0000024}
+    - name: RingFinger3_L
+      parentName: RingFinger2_L
+      position: {x: 7.4505804e-11, y: 0.00019212335, z: 3.352761e-10}
+      rotation: {x: -0.04023164, y: 0.043178346, z: -0.0024780724, w: -0.99825394}
+      scale: {x: 1.000002, y: 1.000002, z: 1.0000002}
+    - name: RingFinger3_L_end
+      parentName: RingFinger3_L
+      position: {x: -0, y: 0.0002565991, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightShoulder
+      parentName: Chest
+      position: {x: 0.00045360014, y: 0.002015282, z: 0.000094632655}
+      rotation: {x: 0.5361596, y: 0.36168998, z: 0.61425316, w: -0.45211315}
+      scale: {x: 0.99999976, y: 0.9999998, z: 0.9999995}
+    - name: RightArm
+      parentName: RightShoulder
+      position: {x: -1.862645e-10, y: 0.0009792291, z: -2.6077032e-10}
+      rotation: {x: 0.13736905, y: 0.018977625, z: -0.02009031, w: 0.99013436}
+      scale: {x: 1.000002, y: 1.0000025, z: 1.0000021}
+    - name: RightElbow
+      parentName: RightArm
+      position: {x: 3.7252902e-11, y: 0.0023936576, z: -7.4505804e-11}
+      rotation: {x: 0.031773683, y: -0.008669837, z: 0.018810457, w: 0.99928045}
+      scale: {x: 1.0000035, y: 1.000001, z: 1.0000018}
+    - name: RightWrist
+      parentName: RightElbow
+      position: {x: 9.3132255e-12, y: 0.0026536265, z: 1.4901161e-10}
+      rotation: {x: 0.10137223, y: 0.0051762275, z: 0.054822844, w: 0.9933234}
+      scale: {x: 0.9999997, y: 1.0000008, z: 1.0000005}
+    - name: MiddleFinger1_R
+      parentName: RightWrist
+      position: {x: 0.000060619775, y: 0.00087810366, z: -0.00008322316}
+      rotation: {x: -0.10411824, y: 0.06672363, z: -0.00027862284, w: 0.99232423}
+      scale: {x: 1.0000002, y: 0.99999994, z: 1.0000026}
+    - name: MiddleFinger2_R
+      parentName: MiddleFinger1_R
+      position: {x: 5.5879353e-11, y: 0.00021120734, z: 2.4214386e-10}
+      rotation: {x: -0.027567852, y: -0.001071684, z: -0.024446914, w: 0.99932045}
+      scale: {x: 1.0000015, y: 1.0000012, z: 1.0000011}
+    - name: MiddleFinger3_R
+      parentName: MiddleFinger2_R
+      position: {x: 5.5879353e-11, y: 0.0002763559, z: -7.4505804e-11}
+      rotation: {x: 0.02157353, y: 0.07491321, z: -0.0026986122, w: 0.99695307}
+      scale: {x: 1.0000032, y: 1.0000038, z: 1.0000031}
+    - name: MiddleFinger3_R_end
+      parentName: MiddleFinger3_R
+      position: {x: -0, y: 0.00023289851, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ThumbFinger1_R
+      parentName: RightWrist
+      position: {x: 0.00033986807, y: 0.0003403299, z: -0.000097990036}
+      rotation: {x: -0.35193807, y: -0.64589745, z: 0.21521547, w: 0.64236945}
+      scale: {x: 1.0000019, y: 0.9999999, z: 0.9999995}
+    - name: ThumbFinger2_R
+      parentName: ThumbFinger1_R
+      position: {x: -6.519258e-11, y: 0.000241426, z: -1.4901161e-10}
+      rotation: {x: 0.0012390908, y: 0.17869012, z: -0.041128878, w: 0.9830447}
+      scale: {x: 1.0000013, y: 0.99999857, z: 0.99999875}
+    - name: ThumbFinger3_R
+      parentName: ThumbFinger2_R
+      position: {x: -0, y: 0.00018067866, z: -1.0244548e-10}
+      rotation: {x: -0.010409246, y: 0.3452063, z: 0.016644668, w: 0.9383215}
+      scale: {x: 1.0000035, y: 1.0000023, z: 1.0000002}
+    - name: ThumbFinger3_R_end
+      parentName: ThumbFinger3_R
+      position: {x: -0, y: 0.00018912637, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: IndexFinger1_R
+      parentName: RightWrist
+      position: {x: 0.00023354015, y: 0.0008580827, z: -0.00012337542}
+      rotation: {x: -0.065960914, y: 0.12132641, z: -0.007212159, w: 0.9903924}
+      scale: {x: 0.9999994, y: 0.99999946, z: 1.0000013}
+    - name: IndexFinger2_R
+      parentName: IndexFinger1_R
+      position: {x: 9.3132255e-12, y: 0.00019836349, z: -1.11758706e-10}
+      rotation: {x: -0.028751403, y: -0.05381027, z: -0.026979651, w: 0.99777246}
+      scale: {x: 1.000003, y: 1.0000012, z: 1.0000032}
+    - name: IndexFinger3_R
+      parentName: IndexFinger2_R
+      position: {x: -3.4284312e-10, y: 0.00023194603, z: -7.4505804e-11}
+      rotation: {x: 0.03741562, y: 0.07091305, z: 0.016008452, w: 0.996652}
+      scale: {x: 1, y: 1.000001, z: 1}
+    - name: IndexFinger3_R_end
+      parentName: IndexFinger3_R
+      position: {x: -0, y: 0.00015771824, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PinkyFinger1_R
+      parentName: RightWrist
+      position: {x: -0.00029688753, y: 0.0008406661, z: -0.000099161785}
+      rotation: {x: -0.06893598, y: 0.001379211, z: 0.010262349, w: 0.9975674}
+      scale: {x: 1.0000004, y: 1.0000012, z: 1.000003}
+    - name: PinkyFinger2_R
+      parentName: PinkyFinger1_R
+      position: {x: -3.72529e-10, y: 0.00017519212, z: -2.0489097e-10}
+      rotation: {x: 0.00044164056, y: 0.021888662, z: -0.020708907, w: 0.9995458}
+      scale: {x: 1.0000036, y: 1.0000035, z: 1.0000029}
+    - name: PinkyFinger3_R
+      parentName: PinkyFinger2_R
+      position: {x: -2.1420418e-10, y: 0.0002035823, z: -1.11758706e-10}
+      rotation: {x: -0.024726186, y: 0.03824556, z: -0.03299434, w: 0.9984174}
+      scale: {x: 1.0000006, y: 1.0000002, z: 1.0000019}
+    - name: PinkyFinger3_R_end
+      parentName: PinkyFinger3_R
+      position: {x: -0, y: 0.00016294498, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RingFinger1_R
+      parentName: RightWrist
+      position: {x: -0.00011457364, y: 0.0008997747, z: -0.00006540133}
+      rotation: {x: -0.110794686, y: -0.023221264, z: 0.019131709, w: 0.99338776}
+      scale: {x: 0.99999905, y: 0.9999989, z: 1.0000026}
+    - name: RingFinger2_R
+      parentName: RingFinger1_R
+      position: {x: -1.6763806e-10, y: 0.00022682219, z: -1.11758706e-10}
+      rotation: {x: -0.02344418, y: 0.05191592, z: -0.032839436, w: 0.997836}
+      scale: {x: 1.000002, y: 1.000002, z: 1.0000025}
+    - name: RingFinger3_R
+      parentName: RingFinger2_R
+      position: {x: 2.2351741e-10, y: 0.00019212275, z: -4.0978193e-10}
+      rotation: {x: 0.040222835, y: 0.04318471, z: -0.0025404808, w: 0.9982539}
+      scale: {x: 1.000002, y: 1.0000043, z: 1.0000025}
+    - name: RingFinger3_R_end
+      parentName: RingFinger3_R
+      position: {x: -0, y: 0.0002565991, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Gun
+      parentName: Armature.001
+      position: {x: 0.0010432258, y: -0.0031642918, z: 0.0054987716}
+      rotation: {x: -8.364796e-15, y: 0.7071068, z: 0.7071068, w: -8.364786e-15}
+      scale: {x: 0.99999976, y: 0.999999, z: 0.999999}
+    - name: Charger
+      parentName: Gun
+      position: {x: 0.0000016447901, y: 0.00077525375, z: -0.00021736443}
+      rotation: {x: -0.74105805, y: 0.000000029349629, z: -0.000000032392684, w: 0.671441}
+      scale: {x: 1, y: 1.0000008, z: 1}
+    - name: Charger_end
+      parentName: Charger
+      position: {x: -0, y: 0.0015436579, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: On
+      parentName: Gun
+      position: {x: 0.00013693764, y: -0.00043563693, z: 0.0002857858}
+      rotation: {x: 8.29148e-15, y: 0.000000059604645, z: -0.70090955, w: 0.7132502}
+      scale: {x: 0.9999999, y: 1, z: 1.0000013}
+    - name: On_end
+      parentName: On
+      position: {x: -0, y: 0.000110983165, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Firemode
+      parentName: Gun
+      position: {x: 0.00016888804, y: -0.0005469987, z: 0.00017863452}
+      rotation: {x: 8.29148e-15, y: 0.000000059604645, z: -0.70090955, w: 0.7132502}
+      scale: {x: 0.9999999, y: 1, z: 1.0000013}
+    - name: Firemode_end
+      parentName: Firemode
+      position: {x: -0, y: 0.000110983165, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Trigger
+      parentName: Gun
+      position: {x: 0.0000022104382, y: -0.0008360645, z: -0.0004093498}
+      rotation: {x: 3.283848e-21, y: 7.1054274e-14, z: -0.00000027759586, w: 1}
+      scale: {x: 1, y: 0.9999989, z: 0.9999989}
+    - name: Trigger_end
+      parentName: Trigger
+      position: {x: -0, y: 0.00013419836, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Charm
+      parentName: Gun
+      position: {x: 0.0001607862, y: -0.00023462743, z: -0.000056872366}
+      rotation: {x: -0.50089836, y: 0.4985712, z: -0.48371503, w: 0.5162823}
+      scale: {x: 1.0000021, y: 1.0000027, z: 1.0000018}
+    - name: Charm_end
+      parentName: Charm
+      position: {x: -0, y: 0.00006404707, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sling
+      parentName: Gun
+      position: {x: 0.00016122297, y: 0.0047519295, z: 0.00019960105}
+      rotation: {x: -0.50563204, y: 0.49409506, z: -0.48828623, w: 0.5116472}
+      scale: {x: 0.9999995, y: 0.999999, z: 0.99999887}
+    - name: Sling_end
+      parentName: Sling
+      position: {x: -0, y: 0.00016375972, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Magazine 1
+      parentName: Gun
+      position: {x: 0.0000023661553, y: 0.00015839278, z: -0.00072161434}
+      rotation: {x: -0.7391366, y: -0.0000000012619806, z: 0.00000005580328, w: 0.6735556}
+      scale: {x: 1.0000035, y: 1.0000021, z: 0.9999996}
+    - name: Magazine_end
+      parentName: Magazine 1
+      position: {x: -0, y: 0.0010163442, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: EjectionPort
+      parentName: Gun
+      position: {x: -0.00012900308, y: 0.00023786574, z: 0.00014054119}
+      rotation: {x: 1.7033478e-21, y: 1.4210855e-14, z: -0.00000014399035, w: 1}
+      scale: {x: 1, y: 0.9999989, z: 0.9999989}
+    - name: EjectionPort_end
+      parentName: EjectionPort
+      position: {x: -0, y: 0.00025871812, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Power1
+      parentName: Gun
+      position: {x: 0.00016888804, y: -0.0006692996, z: 0.00017863452}
+      rotation: {x: 8.29148e-15, y: 0.000000059604645, z: -0.70090955, w: 0.7132502}
+      scale: {x: 0.9999999, y: 1, z: 1.0000013}
+    - name: Power1_end
+      parentName: Power1
+      position: {x: -0, y: 0.000110983165, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Power2
+      parentName: Gun
+      position: {x: 0.00016888797, y: -0.0007455882, z: 0.00017863452}
+      rotation: {x: 0.000000029802326, y: 0.00000008940696, z: -0.70090944, w: 0.71325034}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000006}
+    - name: Power2_end
+      parentName: Power2
+      position: {x: -0, y: 0.00011098324, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Magazine2
+      parentName: Gun
+      position: {x: 0.0000023661553, y: 0.00015839278, z: -0.00072161434}
+      rotation: {x: -0.7391366, y: -0.0000000012619806, z: 0.00000005580328, w: 0.6735556}
+      scale: {x: 1.0000035, y: 1.0000021, z: 0.9999996}
+    - name: Magazine2_end
+      parentName: Magazine2
+      position: {x: -0, y: 0.0010163442, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ChargingHandle
+      parentName: Gun
+      position: {x: 0.000064306034, y: -0.001194018, z: 0.00014054119}
+      rotation: {x: 0.9336399, y: 0.00000004470348, z: 0.31121328, w: 0.17737783}
+      scale: {x: 1, y: 0.9999989, z: 0.9999989}
+    - name: ChargingHandle_end
+      parentName: ChargingHandle
+      position: {x: -0, y: 0.00025871812, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Body
+      parentName: VI-CTR17(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Coat
+      parentName: VI-CTR17(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Eppaulettes
+      parentName: VI-CTR17(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Gloves
+      parentName: VI-CTR17(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Camera.001
+      parentName: VI-CTR17(Clone)
+      position: {x: 0.016460504, y: 0.652676, z: 0.019103408}
+      rotation: {x: 0.03837487, y: -0.003488034, z: 0.00013395213, w: 0.9992573}
+      scale: {x: 100, y: 100, z: 99.99999}
+    - name: Mag2
+      parentName: VI-CTR17(Clone)
+      position: {x: 0.095431104, y: 0.5387734, z: 0.33023778}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,2 +1,3 @@
 # FragmentedBrass
-School project
+Borko :)
+- Matjaž Vaupotič LP

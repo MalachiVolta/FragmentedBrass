@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHandler : MonoBehaviour, IHealthSys
 {
+    public Animator animator;
     int maxHealth = 100;
     int currentHealth;
     bool isAlive = true;
@@ -20,10 +21,24 @@ public class PlayerHandler : MonoBehaviour, IHealthSys
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J) && !Input.GetKeyDown(KeyCode.Mouse1))
         {
             isBuilding = !isBuilding;
+
+            if (isBuilding)
+            {
+                animator.SetTrigger("EquipRadio");
+            }
+            else
+            {
+                animator.SetTrigger("EquipGun");
+            }
         }
+
+        if (Input.GetKey(KeyCode.W))
+            animator.SetBool("Walk", true);
+        else
+            animator.SetBool("Walk", false);
     }
 
     public void Damage(int dmg)

@@ -5,6 +5,7 @@ using System;
 
 public class GridBuildingSystem : MonoBehaviour
 {
+    public Animator viewModelAnimator;
     public static GridBuildingSystem Instance { get; private set; }
     [SerializeField] private List<PlacedObjectTypeSO> PlacableObjectsList;
     private PlacedObjectTypeSO PlacabaleObjects;
@@ -97,6 +98,7 @@ public class GridBuildingSystem : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && player.isBuilding)
             {
+                viewModelAnimator.SetTrigger("UseRadio");
                 grid.GetXZ(Mouse3D.GetMouseWorldPosition(), out int x, out int z);
                 List<Vector2Int> gridPositionList = PlacabaleObjects.GetGridPositionList(new Vector2Int(x, z), dir);
 

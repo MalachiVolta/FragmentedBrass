@@ -9,7 +9,6 @@ public class AIScipt : MonoBehaviour
     public NavMeshAgent agent;
     public GameObject target;
     public Enemy enemy;
-    private RaycastHit hit;
 
     // Update is called once per frame
     void Update()

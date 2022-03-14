@@ -9,6 +9,7 @@ public class PlayerHandler : MonoBehaviour, IHealthSys
     int currentHealth;
     bool isAlive = true;
     public bool isBuilding = false;
+    public bool crosshair = false;
 
     public HealthBar healthBar;
     // Start is called before the first frame update
@@ -21,10 +22,9 @@ public class PlayerHandler : MonoBehaviour, IHealthSys
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J) && !Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.J) && !Input.GetKeyDown(KeyCode.Mouse1) && (animator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|GunIdle") || animator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|IdleRadio")))
         {
             isBuilding = !isBuilding;
-
             if (isBuilding)
             {
                 animator.SetTrigger("EquipRadio");
@@ -35,7 +35,7 @@ public class PlayerHandler : MonoBehaviour, IHealthSys
             }
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             animator.SetBool("Walk", true);
         else
             animator.SetBool("Walk", false);

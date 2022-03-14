@@ -58,7 +58,7 @@ public class Weapon : MonoBehaviour, IWeapon
     {
         if (player.isBuilding == false)
         {
-            if (Input.GetButton("Fire1") && Time.time - nextTimeToFire > 1 / fireRate && currentAmmo > 0 && !viewModelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|GunReloadFull") && !viewModelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|GunDraw_001"))
+            if (Input.GetButton("Fire1") && Time.time - nextTimeToFire > 1 / fireRate && currentAmmo > 0 && (viewModelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|GunIdle") || viewModelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|GunShoot")))
             {
                 viewModelAnimator.SetTrigger("Shoot");
                 nextTimeToFire = Time.time;

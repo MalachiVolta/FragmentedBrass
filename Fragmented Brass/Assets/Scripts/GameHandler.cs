@@ -1,18 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class GameHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform enemyPrefab;
+    public Transform spawnerPoint;
 
-    // Update is called once per frame
+    public float timeBetweenWaves = 5f;
+    private float countdown = 30f;
+    private int waveNumber = 0;
     void Update()
     {
-        
+        if (countdown <= 0f)
+        {
+            StartCoroutine(SpawnWave());
+            countdown = timeBetweenWaves;
+        }
+
+        countdown -= Time.deltaTime;
+    }
+
+    IEnumerator SpawnWave()
+    {
+        waveNumber++;
+        Debug.Log("Wave Incoming!");
+
+        for (int i = 0; i < waveNumber; i++)
+        {
+            SpawnEnemy();
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    void SpawnEnemy()
+    {
+        Instantiate(enemyPrefab, spawnerPoint.position, spawnerPoint.rotation);
     }
 }

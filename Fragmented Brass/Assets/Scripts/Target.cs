@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, ITargetable
+public class Target : MonoBehaviour, ITargetable
 {
     [SerializeField] private int currentHealth = 50;
     public void Hit(int amount)

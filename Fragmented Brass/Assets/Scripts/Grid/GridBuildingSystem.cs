@@ -6,6 +6,9 @@ using System;
 public class GridBuildingSystem : MonoBehaviour
 {
     public Animator viewModelAnimator;
+
+    private int WallCount = 5;
+    private int ScrapCount = 300;
     public static GridBuildingSystem Instance { get; private set; }
     [SerializeField] private List<PlacedObjectTypeSO> PlacableObjectsList;
     private PlacedObjectTypeSO PlacabaleObjects;
@@ -98,6 +101,18 @@ public class GridBuildingSystem : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && player.isBuilding)
             {
+                if (!PlacabaleObjects.isTurret)
+                {
+                    if (WallCount <= 0)
+                        return;
+                }
+
+                if (ScrapCount < 150 && PlacabaleObjects.isTurret)
+                {
+                    return;
+                }
+
+
                 viewModelAnimator.SetTrigger("UseRadio");
                 grid.GetXZ(Mouse3D.GetMouseWorldPosition(), out int x, out int z);
                 List<Vector2Int> gridPositionList = PlacabaleObjects.GetGridPositionList(new Vector2Int(x, z), dir);
@@ -125,6 +140,11 @@ public class GridBuildingSystem : MonoBehaviour
                         grid.GetGridObject(gridPosition.x, gridPosition.y).SetWall(placedObject);
                     }
                     gridObject.SetWall(placedObject);
+                    if (!PlacabaleObjects.isTurret)
+                    {
+                        WallCount--;
+                    }
+                    else { WallCount--; ScrapCount -= 150; }
                 }
                 else
                 {
@@ -137,6 +157,17 @@ public class GridBuildingSystem : MonoBehaviour
             {
                 GridObject gridObject = grid.GetGridObject(Mouse3D.GetMouseWorldPosition());
                 PlacedObject placedObject = gridObject.GetWall();
+
+                if (placedObject == null)
+                    return;
+
+                if (!placedObject.isTurret)
+                {
+                    WallCount++;
+                }
+                else { WallCount++; ScrapCount += 150; }
+
+
                 if (placedObject != null)
                 {
                     placedObject.DestroySelf();
@@ -154,8 +185,8 @@ public class GridBuildingSystem : MonoBehaviour
             {
                 dir = PlacedObjectTypeSO.GetNextDir(dir);
             }
-            if (Input.GetKeyDown(KeyCode.Alpha1) && player.isBuilding) { PlacabaleObjects = PlacableObjectsList[0]; }
-            if (Input.GetKeyDown(KeyCode.Alpha2) && player.isBuilding) { PlacabaleObjects = PlacableObjectsList[1]; }
+            if (Input.GetKeyDown(KeyCode.Alpha1) && player.isBuilding) { PlacabaleObjects = PlacableObjectsList[0]; GhostObjects = PlacableObjectsList[0]; }
+            if (Input.GetKeyDown(KeyCode.Alpha2) && player.isBuilding) { PlacabaleObjects = PlacableObjectsList[1]; GhostObjects = PlacableObjectsList[1]; }
         }
         catch (Exception ex)
         {
@@ -199,6 +230,17 @@ public class GridBuildingSystem : MonoBehaviour
     public PlacedObjectTypeSO GetPlacedObjectTypeSO()
     {
         return GhostObjects;
+    }
+
+    public void ReceiveWall(int Wall)
+    {
+        WallCount += Wall;
+    }
+
+
+    public void ReceiveTurret(int Scrap)
+    {
+        ScrapCount += Scrap;
     }
 
 }

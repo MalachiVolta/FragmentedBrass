@@ -26,6 +26,7 @@ public class PlacedObjectTypeSO : ScriptableObject
         Right,
     }
 
+    public bool isTurret = true;
     public string nameString;
     public Transform prefab;
     public Transform visual;

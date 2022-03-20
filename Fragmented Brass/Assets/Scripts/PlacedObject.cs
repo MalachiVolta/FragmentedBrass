@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlacedObject : MonoBehaviour
 {
+    public bool isTurret = true;
     public static PlacedObject Create(Vector3 worldPosition, Vector2Int origin, PlacedObjectTypeSO.Dir dir, PlacedObjectTypeSO placedObjectTypeSO)
     {
         Transform placedObjectTransform = Instantiate(placedObjectTypeSO.prefab, worldPosition, Quaternion.Euler(0, placedObjectTypeSO.GetRotationAngle(dir), 0));
@@ -13,6 +14,7 @@ public class PlacedObject : MonoBehaviour
         placedObject.placedObjectTypeSO = placedObjectTypeSO;
         placedObject.origin = origin;
         placedObject.dir = dir;
+        placedObject.isTurret = placedObjectTypeSO.isTurret;
 
         return placedObject;
     }

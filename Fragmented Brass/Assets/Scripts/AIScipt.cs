@@ -15,6 +15,8 @@ public class AIScipt : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Target");
+        enemy = target.GetComponent<Target>();
         agent.SetDestination(target.transform.position);
     }
     void Update()

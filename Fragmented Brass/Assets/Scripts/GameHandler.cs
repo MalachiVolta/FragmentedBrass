@@ -5,18 +5,23 @@ using System.Collections;
 
 public class GameHandler : MonoBehaviour
 {
-    public Transform enemyPrefab;
+    public GameObject enemyPrefab;
     public Transform spawnerPoint;
+    public GridBuildingSystem gridBuildingSystem;
 
-    public float timeBetweenWaves = 5f;
+    public float timeBetweenWaves = 15f;
     private float countdown = 30f;
-    private int waveNumber = 0;
+    private int waveNumber = 4;
+    private int CurrentWave = 1;
     void Update()
     {
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
+            CurrentWave++;
+            gridBuildingSystem.ReceiveWall(2);
             countdown = timeBetweenWaves;
+            return;
         }
 
         countdown -= Time.deltaTime;
@@ -38,4 +43,5 @@ public class GameHandler : MonoBehaviour
     {
         Instantiate(enemyPrefab, spawnerPoint.position, spawnerPoint.rotation);
     }
+
 }

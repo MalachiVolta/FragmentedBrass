@@ -219,6 +219,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &411307704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 411307706}
+  - component: {fileID: 411307705}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &411307705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411307704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0eb3382a8d73a6439cd27d70b45f8ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 681673067943494210, guid: da9269fb44daf8542845e29586a21a66, type: 3}
+  spawnerPoint: {fileID: 425153089}
+  gridBuildingSystem: {fileID: 0}
+  timeBetweenWaves: 15
+  CurrentWave: 1
+--- !u!4 &411307706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411307704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 212.72, y: 0.9200001, z: 157.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &425153089 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7811353403144014710, guid: 532e4b0f9d2fb3e429ca233d4c466063, type: 3}
+  m_PrefabInstance: {fileID: 7811353403706582900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &527139210
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,8 +390,8 @@ GameObject:
   - component: {fileID: 949168693}
   - component: {fileID: 949168692}
   m_Layer: 0
-  m_Name: Testing Dummy
-  m_TagString: Untagged
+  m_Name: Target
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5765,7 +5818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 161595944163956984, guid: da9269fb44daf8542845e29586a21a66, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 206.41
+      value: 222.4
       objectReference: {fileID: 0}
     - target: {fileID: 161595944163956984, guid: da9269fb44daf8542845e29586a21a66, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5806,11 +5859,15 @@ PrefabInstance:
     - target: {fileID: 411133626180452125, guid: da9269fb44daf8542845e29586a21a66, type: 3}
       propertyPath: enemy
       value: 
-      objectReference: {fileID: 949168692}
+      objectReference: {fileID: 0}
     - target: {fileID: 411133626180452125, guid: da9269fb44daf8542845e29586a21a66, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 949168691}
+      objectReference: {fileID: 0}
+    - target: {fileID: 411133626180452127, guid: da9269fb44daf8542845e29586a21a66, type: 3}
+      propertyPath: m_Speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 681673067943494210, guid: da9269fb44daf8542845e29586a21a66, type: 3}
       propertyPath: m_Name
       value: BruhBot

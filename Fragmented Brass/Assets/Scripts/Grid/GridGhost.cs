@@ -8,6 +8,7 @@ public class GridGhost : MonoBehaviour
     private Transform visual;
     private PlacedObjectTypeSO placedObjectTypeSO;
     public PlayerHandler player;
+    [SerializeField] private float Offset = 12f;
 
     private void Start()
     {
@@ -27,7 +28,7 @@ public class GridGhost : MonoBehaviour
         {
             RefreshVisual();
             Vector3 targetPosition = GridBuildingSystem.Instance.GetMouseWorldSnappedPosition();
-            targetPosition.y = 0f;
+            targetPosition.y = Offset;
             transform.position = targetPosition;
 
             transform.rotation = GridBuildingSystem.Instance.GetPlacedObjectRotation();

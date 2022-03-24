@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 public class GridBuildingSystem : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI BuildablesText;
+    [SerializeField] TextMeshProUGUI ErrorText;
     public Animator viewModelAnimator;
 
-    private int WallCount = 5;
-    private int ScrapCount = 300;
+    [SerializeField] private int WallCount = 5;
+    [SerializeField] private int ScrapCount = 300;
     public static GridBuildingSystem Instance { get; private set; }
     [SerializeField] private List<PlacedObjectTypeSO> PlacableObjectsList;
     private PlacedObjectTypeSO PlacabaleObjects;
@@ -28,6 +31,7 @@ public class GridBuildingSystem : MonoBehaviour
 
     private void Awake()
     {
+        ErrorText.text = "";
         Instance = this;
         OriginPosition.x = transform.position.x;
         OriginPosition.y = transform.position.y;
@@ -96,19 +100,23 @@ public class GridBuildingSystem : MonoBehaviour
 
     private void Update()
     {
+        BuildablesText.text = "Walls: " + WallCount.ToString() + "\n" + "Scrap: " + ScrapCount.ToString();
         try
         {
 
             if (Input.GetMouseButtonDown(0) && player.isBuilding)
             {
-                if (!PlacabaleObjects.isTurret)
+
+                if (WallCount <= 0)
                 {
-                    if (WallCount <= 0)
-                        return;
+                    StartCoroutine(ErrorFlash("NOT ENOUGH RESOURCES!"));
+                    return;
                 }
+
 
                 if (ScrapCount < 150 && PlacabaleObjects.isTurret)
                 {
+                    StartCoroutine(ErrorFlash("NOT ENOUGH RESOURCES!"));
                     return;
                 }
 
@@ -148,7 +156,7 @@ public class GridBuildingSystem : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Cantbuildhere");
+                    StartCoroutine(ErrorFlash("CANNOT BUILD HERE!"));
                 }
 
             }
@@ -190,7 +198,7 @@ public class GridBuildingSystem : MonoBehaviour
         }
         catch (Exception ex)
         {
-            Debug.LogException(ex);
+            StartCoroutine(ErrorFlash("CANNOT BUILD HERE!"));
         }
     }
     private void RefreshSelectedObjectType()
@@ -243,4 +251,13 @@ public class GridBuildingSystem : MonoBehaviour
         ScrapCount += Scrap;
     }
 
+    IEnumerator ErrorFlash(string text)
+    {
+        ErrorText.text = text;
+        yield return new WaitForSeconds(2f);
+        ErrorText.text = "";
+        yield return 0;
+
+
+    }
 }

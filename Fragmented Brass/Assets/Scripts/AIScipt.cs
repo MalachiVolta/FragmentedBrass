@@ -26,7 +26,7 @@ public class AIScipt : MonoBehaviour
             float dist = agent.remainingDistance;
             animator.SetBool("Walk", true);
 
-            if (dist < 3)
+            if (dist < 5)
             {
                 animator.SetBool("Walk", false);
                 agent.Stop();

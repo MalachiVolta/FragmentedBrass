@@ -12,7 +12,7 @@ public class SceneHandler : MonoBehaviour
     void Awake()
     {
         instance = this;
-
+        DontDestroyOnLoad(this);
         SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
 
     }

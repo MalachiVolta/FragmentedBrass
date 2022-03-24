@@ -18,9 +18,11 @@ public class AIScipt : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Target");
         enemy = target.GetComponent<Target>();
         agent.SetDestination(target.transform.position);
+
     }
     void Update()
     {
+        agent.SetDestination(target.transform.position);
         if (target != null)
         {
             float dist = agent.remainingDistance;

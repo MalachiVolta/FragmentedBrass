@@ -141,7 +141,7 @@ public class GridBuildingSystem : MonoBehaviour
                 if (canBuild && makesure)
                 {
                     Vector2Int rotationOffset = PlacabaleObjects.GetRotationOffset(dir);
-                    Vector3 placedObjectWorldPosition = grid.GetWorldPosition(x, z) + new Vector3(rotationOffset.x, 0, rotationOffset.y) * grid.GetCellSize();
+                    Vector3 placedObjectWorldPosition = grid.GetWorldPosition(x, z) + new Vector3(rotationOffset.x, 0.1f, rotationOffset.y) * grid.GetCellSize();
                     PlacedObject placedObject = PlacedObject.Create(placedObjectWorldPosition, new Vector2Int(x, z), dir, PlacabaleObjects);
                     foreach (Vector2Int gridPosition in gridPositionList)
                     {

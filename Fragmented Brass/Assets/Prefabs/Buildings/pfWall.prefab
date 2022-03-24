@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 952322131820026542}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: WallVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 7158381761582605049}
   - component: {fileID: 2412580143893050212}
   - component: {fileID: 1917451898340704791}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 7299007675135993684}
   - component: {fileID: 8115700950774138233}
   - component: {fileID: 3916069816594783464}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 7046253748881421183}
   - component: {fileID: 6747867754237497573}
   - component: {fileID: 2977459930754601686}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 1384162735202696896}
   - component: {fileID: 8369520299295412521}
   - component: {fileID: 3131656759535343924}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 7360165241428988808}
   - component: {fileID: 2988545098994397115}
   - component: {fileID: 4255246077929355082}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 3707583051846534425}
   - component: {fileID: 2906989377756895698}
   - component: {fileID: 2969506836466390919}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 2190126213029367574}
   - component: {fileID: 2781415456523331139}
   - component: {fileID: 8543328041821052607}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,9 +644,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6515146370837485842}
-  - component: {fileID: 356869156188155554}
   - component: {fileID: 4641689390239278246}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WallBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,19 +672,6 @@ Transform:
   m_Father: {fileID: 952322131820026542}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &356869156188155554
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5846133800358233000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &4641689390239278246
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -696,7 +682,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 1.1, y: 0.5, z: 1.1}
+  m_Extents: {x: 0.25, y: 0.5, z: 0.25}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 0
@@ -713,7 +699,7 @@ GameObject:
   - component: {fileID: 7934169953107477111}
   - component: {fileID: 1722209153643050217}
   - component: {fileID: 7124846284125349942}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -794,7 +780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2329487222813622860}
   - component: {fileID: -1597169526482229634}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: pfWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -828,4 +814,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e05dba211ada15448a4d64420bdbe1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTurret: 1
+  isTurret: 0

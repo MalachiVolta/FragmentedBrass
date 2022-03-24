@@ -47,5 +47,6 @@ public class SceneHandler : MonoBehaviour
             }
         }
         loadingScreen.gameObject.SetActive(false);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(2));
     }
 }

@@ -9,9 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864550795651173662}
-  - component: {fileID: 4477967543727955765}
   - component: {fileID: 3832820356364655216}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: WallBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,19 +39,6 @@ Transform:
   m_Father: {fileID: 6675074257615081122}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4477967543727955765
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50754498865502116}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &3832820356364655216
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -63,7 +49,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 1.1, y: 1, z: 1.1}
+  m_Extents: {x: 0.25, y: 1, z: 0.25}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 0
@@ -80,7 +66,7 @@ GameObject:
   - component: {fileID: 2953224241693844462}
   - component: {fileID: 4057845729475190922}
   - component: {fileID: 853938366151584590}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Turret Swivel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +148,7 @@ GameObject:
   - component: {fileID: 466546283885206548}
   - component: {fileID: 1840382885518130410}
   - component: {fileID: 8839442648401443421}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Barrels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +230,7 @@ GameObject:
   - component: {fileID: 2166072488504806689}
   - component: {fileID: 8726961784405697224}
   - component: {fileID: 2760432673905945301}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +312,7 @@ GameObject:
   - component: {fileID: 7525988936461653173}
   - component: {fileID: 9050586924946093720}
   - component: {fileID: 4279065474895408905}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +394,7 @@ GameObject:
   - component: {fileID: 7718721803531116649}
   - component: {fileID: 2613097349237316698}
   - component: {fileID: 3906674885025318059}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Cube.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5735927809266847828}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: FirePoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +506,7 @@ GameObject:
   - component: {fileID: 1395557267631684855}
   - component: {fileID: 3144485883627902370}
   - component: {fileID: 8914057742757735774}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +588,7 @@ GameObject:
   - component: {fileID: 4488150369634350840}
   - component: {fileID: 2696904870363736627}
   - component: {fileID: 2598341015960675430}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6675074257615081122}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: WallVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,7 +702,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6595104475361799585}
   - component: {fileID: 9195871445251250235}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Wall_With_Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,7 +748,7 @@ GameObject:
   - component: {fileID: 3620224414376076597}
   - component: {fileID: 8987621529530490642}
   - component: {fileID: 7023388496866526857}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +830,7 @@ GameObject:
   - component: {fileID: 7143045829849854358}
   - component: {fileID: 1935531644128872200}
   - component: {fileID: 8059875624707693527}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,7 +911,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6291692249934998259}
   - component: {fileID: 3268721203848792000}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -975,7 +961,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3282560421057825562}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: FirePoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,7 +993,7 @@ GameObject:
   - component: {fileID: 2178793086258399897}
   - component: {fileID: 4913224100169315927}
   - component: {fileID: 5772212014997209082}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Turret Supports
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1089,7 +1075,7 @@ GameObject:
   - component: {fileID: 2932917143613106247}
   - component: {fileID: 1999864030677185631}
   - component: {fileID: 7321550780974698052}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Turret Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1172,7 +1158,7 @@ GameObject:
   - component: {fileID: 3657588154265007861}
   - component: {fileID: 8137661062293464936}
   - component: {fileID: 5407093700509521435}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1268,7 +1254,7 @@ GameObject:
   - component: {fileID: 3484837467380983667}
   - component: {fileID: 878429241681888489}
   - component: {fileID: 8703174725271422682}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

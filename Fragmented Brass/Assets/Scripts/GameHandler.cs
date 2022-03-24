@@ -14,7 +14,7 @@ public class GameHandler : MonoBehaviour
     [SerializeField] TextMeshProUGUI TimerText;
     public float timeBetweenWaves = 30f;
     private float timer = 660f;
-    private float countdown = 60f;
+    [SerializeField] private float countdown = 60f;
     private int waveNumber = 4;
     private int CurrentWave = 1;
     void Update()
@@ -25,7 +25,7 @@ public class GameHandler : MonoBehaviour
         {
             StartCoroutine(SpawnWave());
             CurrentWave++;
-            gridBuildingSystem.ReceiveWall(10);
+            gridBuildingSystem.ReceiveWall(5);
             countdown = timeBetweenWaves;
             return;
         }

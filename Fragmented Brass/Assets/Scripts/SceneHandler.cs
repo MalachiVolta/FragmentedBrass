@@ -24,10 +24,19 @@ public class SceneHandler : MonoBehaviour
         scenesLoading.Add(SceneManager.UnloadSceneAsync(1));
         scenesLoading.Add(SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive));
 
-        StartCoroutine(GetSceneLoadProgress());
+        StartCoroutine(GetSceneLoadProgress(2));
     }
 
-    public IEnumerator GetSceneLoadProgress()
+    public void LoadMenu()
+    {
+        loadingScreen.gameObject.SetActive(true);
+        scenesLoading.Add(SceneManager.UnloadSceneAsync(2));
+        scenesLoading.Add(SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive));
+
+        StartCoroutine(GetSceneLoadProgress(1));
+    }
+
+    public IEnumerator GetSceneLoadProgress(int sceneIndex)
     {
         for (int i = 0; i < scenesLoading.Count; i++)
         {
@@ -47,6 +56,6 @@ public class SceneHandler : MonoBehaviour
             }
         }
         loadingScreen.gameObject.SetActive(false);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(2));
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(sceneIndex));
     }
 }

@@ -5,34 +5,33 @@ using UnityEngine;
 public class PlayerHandler : MonoBehaviour, IHealthSys
 {
     public Animator animator;
+    public GameHandler gameHandler;
     int maxHealth = 100;
     int currentHealth;
     bool isAlive = true;
     public bool isBuilding = false;
     public bool crosshair = false;
 
+
     public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
-        Debug.Log("Health: " + currentHealth);
         healthBar.SetMaxValue(maxHealth);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J) && !Input.GetKeyDown(KeyCode.Mouse1) && (animator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|GunIdle") || animator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|IdleRadio")))
+        if (gameHandler.isMidWave == true && animator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|GunIdle"))
         {
-            isBuilding = !isBuilding;
-            if (isBuilding)
-            {
-                animator.SetTrigger("EquipRadio");
-            }
-            else
-            {
-                animator.SetTrigger("EquipGun");
-            }
+            isBuilding = true;
+            animator.SetTrigger("EquipRadio");
+        }
+        else if (gameHandler.isMidWave == false && (animator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|IdleRadio")))
+        {
+            isBuilding = false;
+            animator.SetTrigger("EquipGun");
         }
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))

@@ -68,7 +68,6 @@ public class Weapon : MonoBehaviour, IWeapon
             if (Input.GetButtonDown("Reload") && currentAmmo < chamberedSize)
             {
                 viewModelAnimator.SetTrigger("Reload");
-                Reload();
             }
 
             if (Input.GetMouseButton(1))

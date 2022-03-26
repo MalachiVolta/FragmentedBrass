@@ -18,7 +18,6 @@ public class NavMeshChecker : MonoBehaviour
     {
         NavMeshPath path = new NavMeshPath();
         agent.CalculatePath(target.transform.position, path);
-        Debug.Log(path.status);
         if (path.status == NavMeshPathStatus.PathComplete)
             return true;
         else

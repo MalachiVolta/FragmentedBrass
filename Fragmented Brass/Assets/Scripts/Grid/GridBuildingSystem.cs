@@ -10,6 +10,8 @@ public class GridBuildingSystem : MonoBehaviour
     [SerializeField] TextMeshProUGUI ErrorText;
     public Animator viewModelAnimator;
 
+    public GameObject image;
+
     [SerializeField] private int WallCount = 5;
     [SerializeField] private int ScrapCount = 300;
     public static GridBuildingSystem Instance { get; private set; }
@@ -40,6 +42,7 @@ public class GridBuildingSystem : MonoBehaviour
 
         PlacabaleObjects = PlacableObjectsList[0];
         GhostObjects = PlacableObjectsList[0];
+
     }
 
 
@@ -254,8 +257,10 @@ public class GridBuildingSystem : MonoBehaviour
     IEnumerator ErrorFlash(string text)
     {
         ErrorText.text = text;
+        image.SetActive(true);
         yield return new WaitForSeconds(2f);
         ErrorText.text = "";
+        image.SetActive(false);
         yield return 0;
 
 

@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Transform target;
-
+    [SerializeField] int damage = 30;
     public float travelSpeed = 10f;
 
     public void Homing(Transform _target)
@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
     void HitTarget()
     {
         Enemy enemy = target.GetComponent<Enemy>();
-        enemy.Hit(20);
+        enemy.Hit(damage);
         Destroy(gameObject);
     }
 }

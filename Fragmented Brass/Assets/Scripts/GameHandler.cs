@@ -12,29 +12,47 @@ public class GameHandler : MonoBehaviour
     public GameObject victoryCanvas;
     public TextMeshProUGUI victoryText;
     public SceneHandler sceneHandler;
+    public ChangeCrosshair changeCrosshair;
 
     public Transform spawnerPoint;
     public GridBuildingSystem gridBuildingSystem;
     [SerializeField] TextMeshProUGUI WaveText;
     [SerializeField] TextMeshProUGUI TimerText;
     private GameObject[] gameObjects;
-    public float timeBetweenWaves = 30f;
-    [SerializeField] private float timer = 660f;
+    public float timeBetweenWaves = 45f;
+    [SerializeField] private float timer = 0f;
     [SerializeField] private float countdown = 60f;
-    private int waveNumber = 4;
+    private int waveNumber = 5;
     private int CurrentWave = 1;
     private float victoryTime = 10f;
     private bool gameOver = false;
+    public bool isMidWave = true;
+    private int enemyCount = 0;
+    private int currentEnemyCount = 0;
+    private bool allHaveSpawned = false;
+    public int killedEnemies = 0;
+    private bool isReady = false;
 
     private void Start()
     {
         sceneHandler = GameObject.Find("SceneHandler").GetComponent<SceneHandler>();
     }
+
     void Update()
     {
+
         if (!gameOver)
         {
-            WaveText.text = "CURRENT WAVE: " + CurrentWave.ToString() + "\n" + "NEXT WAVE IN: " + (int)countdown;
+            if (isMidWave)
+                WaveText.text = "CURRENT WAVE: " + CurrentWave.ToString() + "\n" + "NEXT WAVE IN: " + (int)countdown;
+            else
+                WaveText.text = "CURRENT WAVE: " + CurrentWave.ToString() + "\n" + "ENEMIES LEFT: " + ((int)enemyCount - (int)killedEnemies).ToString();
+
+            if (Input.GetKeyDown(KeyCode.F5) && isMidWave && !isReady)
+            {
+                countdown = 3f;
+            }
+
             if ((timer % 60) < 10)
             {
                 TimerText.text = "TIMER: \n" + (int)timer / 60 + ":0" + (int)timer % 60;
@@ -44,20 +62,42 @@ public class GameHandler : MonoBehaviour
                 TimerText.text = "TIMER: \n" + (int)timer / 60 + ":" + (int)timer % 60;
             }
 
+            if (currentEnemyCount == enemyCount)
+                allHaveSpawned = true;
+
             if (countdown <= 0f)
             {
+                allHaveSpawned = false;
+                killedEnemies = 0;
+                enemyCount = 0;
+                currentEnemyCount = 0;
+                isMidWave = false;
                 StartCoroutine(SpawnWave());
                 CurrentWave++;
-                gridBuildingSystem.ReceiveWall(5);
+                gridBuildingSystem.ReceiveWall(3);
                 countdown = timeBetweenWaves;
+                changeCrosshair.isFinished = false;
                 return;
             }
 
-            countdown -= Time.deltaTime;
-            timer -= Time.deltaTime;
+            if (!isMidWave && allHaveSpawned && killedEnemies == enemyCount)
+            {
+                isMidWave = true;
+                changeCrosshair.isFinished = false;
+            }
+
+            if (isMidWave)
+            {
+                countdown -= Time.deltaTime;
+            }
+
+            if (!isMidWave)
+            {
+                timer += Time.deltaTime;
+            }
 
 
-            if (timer <= 0)
+            if (CurrentWave == 9)
             {
                 Win();
             }
@@ -74,6 +114,7 @@ public class GameHandler : MonoBehaviour
     IEnumerator SpawnWave()
     {
         waveNumber *= 2;
+        enemyCount = waveNumber;
         Debug.Log("Wave Incoming!");
 
         for (int i = 0; i < waveNumber; i++)
@@ -86,6 +127,7 @@ public class GameHandler : MonoBehaviour
     void SpawnEnemy()
     {
         Instantiate(enemyPrefab, spawnerPoint.position, spawnerPoint.rotation);
+        currentEnemyCount++;
     }
 
     void Win()
@@ -94,6 +136,7 @@ public class GameHandler : MonoBehaviour
         countdown = 1000f;
         target.SetHealth(100000);
         gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+        StopAllCoroutines();
 
         for (var i = 0; i < gameObjects.Length; i++)
             Destroy(gameObjects[i]);

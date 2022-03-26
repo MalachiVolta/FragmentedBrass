@@ -13,7 +13,7 @@ public class ChangeCrosshair : MonoBehaviour
     [SerializeField] private Sprite[] sprites;
 
     private Image image;
-    private bool isFinished = true;
+    public bool isFinished = true;
     private bool isNormal = true;
     private int index = 0;
     private float timer = 0;
@@ -21,14 +21,10 @@ public class ChangeCrosshair : MonoBehaviour
     void Start()
     {
         image = GetComponent<Image>();
+        isFinished = false;
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J) && !Input.GetKeyDown(KeyCode.Mouse1) && (animator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|GunIdle") || animator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|IdleRadio")))
-        {
-            isFinished = false;
-
-        }
         if ((timer += Time.deltaTime) >= (duration / sprites.Length) && !isFinished && isNormal)
         {
             timer = 0;

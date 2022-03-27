@@ -13,6 +13,8 @@ public class GameHandler : MonoBehaviour
     public TextMeshProUGUI victoryText;
     public SceneHandler sceneHandler;
     public ChangeCrosshair changeCrosshair;
+    public Animator animator;
+    public GameObject buildingVisualiser;
 
     public Transform spawnerPoint;
     public GridBuildingSystem gridBuildingSystem;
@@ -22,8 +24,8 @@ public class GameHandler : MonoBehaviour
     public float timeBetweenWaves = 45f;
     [SerializeField] private float timer = 0f;
     [SerializeField] private float countdown = 60f;
-    private int waveNumber = 5;
-    private int CurrentWave = 1;
+    private int[] waveNumber = new int[] { 3, 10, 15, 20, 25, 30, 40, 60 };
+    private int CurrentWave = 0;
     private float victoryTime = 10f;
     private bool gameOver = false;
     public bool isMidWave = true;
@@ -67,13 +69,15 @@ public class GameHandler : MonoBehaviour
 
             if (countdown <= 0f)
             {
+                buildingVisualiser.SetActive(false);
+                animator.SetTrigger("EquipGun");
                 allHaveSpawned = false;
                 killedEnemies = 0;
                 enemyCount = 0;
                 currentEnemyCount = 0;
                 isMidWave = false;
-                StartCoroutine(SpawnWave());
                 CurrentWave++;
+                StartCoroutine(SpawnWave());
                 gridBuildingSystem.ReceiveWall(3);
                 countdown = timeBetweenWaves;
                 changeCrosshair.isFinished = false;
@@ -84,6 +88,8 @@ public class GameHandler : MonoBehaviour
             {
                 isMidWave = true;
                 changeCrosshair.isFinished = false;
+                buildingVisualiser.SetActive(true);
+                animator.SetTrigger("EquipRadio");
             }
 
             if (isMidWave)
@@ -113,11 +119,9 @@ public class GameHandler : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        waveNumber *= 2;
-        enemyCount = waveNumber;
-        Debug.Log("Wave Incoming!");
+        enemyCount = waveNumber[CurrentWave - 1];
 
-        for (int i = 0; i < waveNumber; i++)
+        for (int i = 0; i < waveNumber[CurrentWave - 1]; i++)
         {
             SpawnEnemy();
             yield return new WaitForSeconds(2f);

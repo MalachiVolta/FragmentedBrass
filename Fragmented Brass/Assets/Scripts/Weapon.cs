@@ -65,7 +65,7 @@ public class Weapon : MonoBehaviour, IWeapon
                 Shoot();
             }
 
-            if (Input.GetButtonDown("Reload") && currentAmmo < chamberedSize)
+            if (Input.GetButtonDown("Reload") && currentAmmo < chamberedSize && !(viewModelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|GunReloadFull")))
             {
                 viewModelAnimator.SetTrigger("Reload");
             }
@@ -79,15 +79,15 @@ public class Weapon : MonoBehaviour, IWeapon
                 viewModelAnimator.SetBool("Aim", true);
                 isAiming = true;
             }
-            if (!Input.GetMouseButton(1) && transform.localPosition != hipfire)
-            {
-                transform.localPosition = Vector3.Slerp(transform.localPosition, hipfire, aimAnimationSpeed * Time.deltaTime);
-                transform.localRotation = Quaternion.Lerp(transform.localRotation, hipfire_rotation, aimAnimationSpeed * Time.deltaTime);
-                sway.isActive = true;
-                crosshair.SetActive(true);
-                viewModelAnimator.SetBool("Aim", false);
-                isAiming = false;
-            }
+        }
+        if (!Input.GetMouseButton(1) && transform.localPosition != hipfire)
+        {
+            transform.localPosition = Vector3.Slerp(transform.localPosition, hipfire, aimAnimationSpeed * Time.deltaTime);
+            transform.localRotation = Quaternion.Lerp(transform.localRotation, hipfire_rotation, aimAnimationSpeed * Time.deltaTime);
+            sway.isActive = true;
+            crosshair.SetActive(true);
+            viewModelAnimator.SetBool("Aim", false);
+            isAiming = false;
         }
     }
 
@@ -111,6 +111,7 @@ public class Weapon : MonoBehaviour, IWeapon
 
     public void Reload()
     {
+        viewModelAnimator.ResetTrigger("Reload");
         if (currentAmmo == 0)
         {
             currentAmmo = magSize;

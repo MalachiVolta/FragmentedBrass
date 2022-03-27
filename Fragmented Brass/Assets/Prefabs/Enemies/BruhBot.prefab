@@ -246,7 +246,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridBuildingSystem: {fileID: 0}
   Grid: {fileID: 0}
-  currentHealth: 75
+  gameHandler: {fileID: 0}
+  currentHealth: 100
 --- !u!1 &688220333886678786
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,12 +26,10 @@ public class PlayerHandler : MonoBehaviour, IHealthSys
         if (gameHandler.isMidWave == true && animator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|GunIdle"))
         {
             isBuilding = true;
-            animator.SetTrigger("EquipRadio");
         }
         else if (gameHandler.isMidWave == false && (animator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|IdleRadio")))
         {
             isBuilding = false;
-            animator.SetTrigger("EquipGun");
         }
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))

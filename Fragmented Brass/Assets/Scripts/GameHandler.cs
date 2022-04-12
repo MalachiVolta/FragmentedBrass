@@ -15,6 +15,7 @@ public class GameHandler : MonoBehaviour
     public ChangeCrosshair changeCrosshair;
     public Animator animator;
     public GameObject buildingVisualiser;
+    public PlayerHandler playerHandler;
 
     public Transform spawnerPoint;
     public GridBuildingSystem gridBuildingSystem;
@@ -70,6 +71,7 @@ public class GameHandler : MonoBehaviour
             if (countdown <= 0f)
             {
                 buildingVisualiser.SetActive(false);
+                playerHandler.isBuilding = false;
                 animator.SetTrigger("EquipGun");
                 allHaveSpawned = false;
                 killedEnemies = 0;
@@ -86,9 +88,11 @@ public class GameHandler : MonoBehaviour
 
             if (!isMidWave && allHaveSpawned && killedEnemies == enemyCount)
             {
+                animator.ResetTrigger("Shoot");
                 isMidWave = true;
                 changeCrosshair.isFinished = false;
                 buildingVisualiser.SetActive(true);
+                playerHandler.isBuilding = true;
                 animator.SetTrigger("EquipRadio");
             }
 

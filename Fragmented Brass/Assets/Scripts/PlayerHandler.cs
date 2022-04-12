@@ -23,14 +23,6 @@ public class PlayerHandler : MonoBehaviour, IHealthSys
 
     void Update()
     {
-        if (gameHandler.isMidWave == true && animator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|GunIdle"))
-        {
-            isBuilding = true;
-        }
-        else if (gameHandler.isMidWave == false && (animator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|IdleRadio")))
-        {
-            isBuilding = false;
-        }
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             animator.SetBool("Walk", true);

@@ -19,6 +19,7 @@ public class Turret : MonoBehaviour
     public VisualEffect[] muzzleFlash;
     public GameObject bulletPrefab;
     public Transform[] firePoint;
+    public AudioClip turretShot;
 
     public float rotationSpeed = 10f;
 
@@ -48,6 +49,7 @@ public class Turret : MonoBehaviour
 
     void Shoot()
     {
+        AudioSource.PlayClipAtPoint(turretShot, transform.position);
         int i = 0;
         GameObject bulletGameObject = (GameObject)Instantiate(bulletPrefab, firePoint[i].position, firePoint[i].rotation);
         Bullet bullet = bulletGameObject.GetComponent<Bullet>();

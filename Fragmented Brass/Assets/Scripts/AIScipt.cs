@@ -11,6 +11,7 @@ public class AIScipt : MonoBehaviour
     public GameObject target;
     public Target enemy;
     private NavMeshPath path;
+    private AudioSource audioSource;
 
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class AIScipt : MonoBehaviour
         NavMeshPath path = new NavMeshPath();
         agent.CalculatePath(target.transform.position, path);
         agent.SetPath(path);
+        audioSource = GetComponent<AudioSource>();
 
     }
     void Update()
@@ -54,6 +56,7 @@ public class AIScipt : MonoBehaviour
 
     void AttackTarget()
     {
+        audioSource.Play();
         if (target != null)
             enemy.Hit(20);
     }

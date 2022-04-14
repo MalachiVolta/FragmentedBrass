@@ -9,6 +9,7 @@ public class GridBuildingSystem : MonoBehaviour
     [SerializeField] TextMeshProUGUI BuildablesText;
     [SerializeField] TextMeshProUGUI ErrorText;
     public Animator viewModelAnimator;
+    public Weapon viewModel;
 
     public GameObject image;
 
@@ -113,6 +114,7 @@ public class GridBuildingSystem : MonoBehaviour
                 if (WallCount <= 0)
                 {
                     StartCoroutine(ErrorFlash("NOT ENOUGH RESOURCES!"));
+                    viewModel.SoundBeepN();
                     return;
                 }
 
@@ -120,11 +122,18 @@ public class GridBuildingSystem : MonoBehaviour
                 if (ScrapCount < 150 && PlacabaleObjects.isTurret)
                 {
                     StartCoroutine(ErrorFlash("NOT ENOUGH RESOURCES!"));
+                    viewModel.SoundBeepN();
                     return;
                 }
 
-
-                viewModelAnimator.SetTrigger("UseRadio");
+                if (player.isBuilding)
+                {
+                    viewModelAnimator.SetTrigger("UseRadio");
+                }
+                else
+                {
+                    viewModelAnimator.ResetTrigger("UseRadio");
+                }
                 grid.GetXZ(Mouse3D.GetMouseWorldPosition(), out int x, out int z);
                 List<Vector2Int> gridPositionList = PlacabaleObjects.GetGridPositionList(new Vector2Int(x, z), dir);
 
@@ -151,6 +160,7 @@ public class GridBuildingSystem : MonoBehaviour
                         grid.GetGridObject(gridPosition.x, gridPosition.y).SetWall(placedObject);
                     }
                     gridObject.SetWall(placedObject);
+                    viewModel.SoundBeepP();
                     if (!PlacabaleObjects.isTurret)
                     {
                         WallCount--;
@@ -160,6 +170,7 @@ public class GridBuildingSystem : MonoBehaviour
                 else
                 {
                     StartCoroutine(ErrorFlash("CANNOT BUILD HERE!"));
+                    viewModel.SoundBeepN();
                 }
 
             }

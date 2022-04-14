@@ -1181,4 +1181,5 @@ MonoBehaviour:
   firePoint:
   - {fileID: 657698356490454473}
   - {fileID: 7725777378608340615}
+  turretShot: {fileID: 8300000, guid: 33545b6c9a5986b4ca81d0fa4fe16164, type: 3}
   rotationSpeed: 10

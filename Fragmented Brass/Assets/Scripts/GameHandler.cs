@@ -54,6 +54,7 @@ public class GameHandler : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F5) && isMidWave && !isReady)
             {
                 countdown = 3f;
+                isReady = true;
             }
 
             if ((timer % 60) < 10)
@@ -70,6 +71,7 @@ public class GameHandler : MonoBehaviour
 
             if (countdown <= 0f)
             {
+                animator.ResetTrigger("UseRadio");
                 buildingVisualiser.SetActive(false);
                 playerHandler.isBuilding = false;
                 animator.SetTrigger("EquipGun");
@@ -88,12 +90,13 @@ public class GameHandler : MonoBehaviour
 
             if (!isMidWave && allHaveSpawned && killedEnemies == enemyCount)
             {
+                playerHandler.isBuilding = true;
                 animator.ResetTrigger("Shoot");
                 isMidWave = true;
                 changeCrosshair.isFinished = false;
                 buildingVisualiser.SetActive(true);
-                playerHandler.isBuilding = true;
                 animator.SetTrigger("EquipRadio");
+                isReady = false;
             }
 
             if (isMidWave)

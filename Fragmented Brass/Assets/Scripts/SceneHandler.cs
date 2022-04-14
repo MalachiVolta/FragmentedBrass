@@ -34,6 +34,8 @@ public class SceneHandler : MonoBehaviour
         scenesLoading.Add(SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive));
 
         StartCoroutine(GetSceneLoadProgress(1));
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public IEnumerator GetSceneLoadProgress(int sceneIndex)

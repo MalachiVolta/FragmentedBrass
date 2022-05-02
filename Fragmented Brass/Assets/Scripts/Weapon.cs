@@ -92,7 +92,7 @@ public class Weapon : MonoBehaviour, IWeapon
 
             if (Input.GetButton("Fire1") && Time.time - nextTimeToFire > 1 / fireRate && currentAmmo > 0 && (viewModelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|GunIdle") || viewModelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Armature_001|GunShoot")))
             {
-                viewModelAnimator.SetTrigger("Shoot");
+                //viewModelAnimator.SetTrigger("Shoot");
                 nextTimeToFire = Time.time;
                 Shoot();
                 StartCoroutine(playAudio(shot));
